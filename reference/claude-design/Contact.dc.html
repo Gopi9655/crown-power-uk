@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;background:#fff;}
+  a{text-decoration:none;color:inherit;}
+  input::placeholder,textarea::placeholder{color:#9AA7B4;}
+  @media (prefers-reduced-motion: no-preference){
+    [data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+    [data-reveal][data-in="1"]{opacity:1;transform:none;}
+    @keyframes cpspin{to{transform:rotate(360deg);}}
+  }
+</style>
+</helmet>
+<div style="font-family:Inter,sans-serif;color:#0C1722;">
+<dc-import name="Header" variant="solid" hint-size="100%,76px"></dc-import>
+
+<main>
+  <!-- HERO -->
+  <section style="background:linear-gradient(115deg,#07111F,#0B2138);padding:clamp(90px,12vw,140px) 0 clamp(50px,7vw,80px);">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,40px);">
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.22em;color:#8FD0FF;text-transform:uppercase;margin-bottom:20px;">Contact</div>
+      <h1 style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(34px,5vw,60px);line-height:1.06;letter-spacing:-0.02em;color:#fff;margin:0 0 20px;max-width:760px;text-wrap:balance;">Talk to Crown Power.</h1>
+      <p style="font-size:clamp(16px,1.6vw,19px);line-height:1.6;color:#B9C6D3;max-width:600px;margin:0;">Tell us about your project or enquiry — our engineers will get back to you.</p>
+    </div>
+  </section>
+
+  <section id="enquiry" style="padding:clamp(56px,8vw,110px) 0;background:#fff;scroll-margin-top:90px;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,40px);display:grid;grid-template-columns:0.85fr 1.15fr;gap:clamp(40px,5vw,72px);align-items:start;">
+
+      <!-- LEFT: INFO -->
+      <div data-reveal style="min-width:0;">
+        <h2 style="font-family:Manrope,sans-serif;font-weight:800;font-size:24px;margin:0 0 24px;color:#0C1722;">Get in touch</h2>
+        <div style="display:flex;flex-direction:column;gap:4px;">
+          <sc-for list="{{ contacts }}" as="c" hint-placeholder-count="3">
+            <a href="{{ c.href }}" style="display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid #EEF2F5;transition:opacity .2s;" style-hover="opacity:0.72;">
+              <span style="width:40px;height:40px;flex:none;border-radius:10px;background:#EEF4FF;display:flex;align-items:center;justify-content:center;">{{ c.icon }}</span>
+              <span style="display:flex;flex-direction:column;">
+                <span style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#8A98A6;margin-bottom:3px;">{{ c.label }}</span>
+                <span style="font-family:Manrope,sans-serif;font-weight:600;font-size:15.5px;color:#0C1722;word-break:break-word;">{{ c.value }}</span>
+              </span>
+            </a>
+          </sc-for>
+        </div>
+
+        <h3 style="font-family:Manrope,sans-serif;font-weight:700;font-size:15px;margin:34px 0 16px;color:#0C1722;">International offices</h3>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <sc-for list="{{ offices }}" as="o" hint-placeholder-count="3">
+            <div style="border:1px solid #E4E9EF;border-radius:12px;padding:16px 18px;">
+              <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:11px;letter-spacing:0.12em;color:#C9A45A;text-transform:uppercase;margin-bottom:6px;">{{ o.flag }}</div>
+              <div style="font-size:14px;color:#43525F;line-height:1.55;">{{ o.detail }}</div>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="display:flex;gap:10px;margin-top:26px;flex-wrap:wrap;">
+          <sc-for list="{{ socials }}" as="s" hint-placeholder-count="4">
+            <a href="{{ s.href }}" aria-label="{{ s.label }}" style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:1px solid #E4E9EF;border-radius:9px;color:#43525F;transition:border-color .2s,color .2s;" style-hover="border-color:#C9A45A;color:#0B1F33;">{{ s.icon }}</a>
+          </sc-for>
+        </div>
+      </div>
+
+      <!-- RIGHT: FORM -->
+      <div data-reveal style="min-width:0;background:#F8FAFC;border:1px solid #E4E9EF;border-radius:18px;padding:clamp(24px,3.4vw,44px);">
+        <sc-if value="{{ isSuccess }}" hint-placeholder-val="{{ false }}">
+          <div style="text-align:center;padding:40px 10px;">
+            <div style="width:64px;height:64px;margin:0 auto 22px;border-radius:50%;background:#E7F6EC;display:flex;align-items:center;justify-content:center;">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1F9D57" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <h3 style="font-family:Manrope,sans-serif;font-weight:800;font-size:24px;margin:0 0 12px;color:#0C1722;">Enquiry received</h3>
+            <p style="font-size:16px;line-height:1.6;color:#5A6875;max-width:380px;margin:0 auto 26px;">Thank you for contacting Crown Power. A member of our team will respond to you shortly.</p>
+            <button type="button" onClick="{{ reset }}" style="font-size:15px;font-weight:600;color:#0B1F33;background:none;border:1px solid #C9A45A;border-radius:9px;padding:12px 22px;cursor:pointer;">Send another enquiry</button>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ showForm }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ onSubmit }}" novalidate="true">
+            <h2 style="font-family:Manrope,sans-serif;font-weight:800;font-size:22px;margin:0 0 6px;color:#0C1722;">Send an enquiry</h2>
+            <p style="font-size:14.5px;color:#5A6875;margin:0 0 26px;">Fields marked <span style="color:#C9A45A;">*</span> are required.</p>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <label style="display:block;">
+                <span style="display:block;font-size:13px;font-weight:600;color:#2B3946;margin-bottom:7px;">First name <span style="color:#C9A45A;">*</span></span>
+                <input type="text" value="{{ values.firstName }}" onInput="{{ handlers.firstName }}" placeholder="Jane" style="{{ fieldStyles.firstName }}" style-focus="border-color:#176BFF;box-shadow:0 0 0 3px rgba(23,107,255,0.15);">
+                <sc-if value="{{ errors.firstName }}" hint-placeholder-val="{{ false }}"><span style="display:block;font-size:12.5px;color:#D64545;margin-top:6px;">{{ errors.firstName }}</span></sc-if>
+              </label>
+              <label style="display:block;">
+                <span style="display:block;font-size:13px;font-weight:600;color:#2B3946;margin-bottom:7px;">Last name <span style="color:#C9A45A;">*</span></span>
+                <input type="text" value="{{ values.lastName }}" onInput="{{ handlers.lastName }}" placeholder="Smith" style="{{ fieldStyles.lastName }}" style-focus="border-color:#176BFF;box-shadow:0 0 0 3px rgba(23,107,255,0.15);">
+                <sc-if value="{{ errors.lastName }}" hint-placeholder-val="{{ false }}"><span style="display:block;font-size:12.5px;color:#D64545;margin-top:6px;">{{ errors.lastName }}</span></sc-if>
+              </label>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;">
+              <label style="display:block;">
+                <span style="display:block;font-size:13px;font-weight:600;color:#2B3946;margin-bottom:7px;">Email <span style="color:#C9A45A;">*</span></span>
+                <input type="email" value="{{ values.email }}" onInput="{{ handlers.email }}" placeholder="jane@company.com" style="{{ fieldStyles.email }}" style-focus="border-color:#176BFF;box-shadow:0 0 0 3px rgba(23,107,255,0.15);">
+                <sc-if value="{{ errors.email }}" hint-placeholder-val="{{ false }}"><span style="display:block;font-size:12.5px;color:#D64545;margin-top:6px;">{{ errors.email }}</span></sc-if>
+              </label>
+              <label style="display:block;">
+                <span style="display:block;font-size:13px;font-weight:600;color:#2B3946;margin-bottom:7px;">Phone</span>
+                <input type="tel" value="{{ values.phone }}" onInput="{{ handlers.phone }}" placeholder="+44 …" style="{{ fieldStyles.phone }}" style-focus="border-color:#176BFF;box-shadow:0 0 0 3px rgba(23,107,255,0.15);">
+              </label>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;">
+              <label style="display:block;">
+                <span style="display:block;font-size:13px;font-weight:600;color:#2B3946;margin-bottom:7px;">Company</span>
+                <input type="text" value="{{ values.company }}" onInput="{{ handlers.company }}" placeholder="Organisation" style="{{ fieldStyles.company }}" style-focus="border-color:#176BFF;box-shadow:0 0 0 3px rgba(23,107,255,0.15);">
+              </label>
+              <label style="display:block;">
+                <span style="display:block;font-size:13px;font-weight:600;color:#2B3946;margin-bottom:7px;">Area of interest</span>
+                <select value="{{ values.interest }}" onChange="{{ handlers.interest }}" style="{{ fieldStyles.interest }}" style-focus="border-color:#176BFF;box-shadow:0 0 0 3px rgba(23,107,255,0.15);">
+                  <sc-for list="{{ interests }}" as="opt" hint-placeholder-count="5">
+                    <option value="{{ opt }}">{{ opt }}</option>
+                  </sc-for>
+                </select>
+              </label>
+            </div>
+
+            <label style="display:block;margin-top:16px;">
+              <span style="display:block;font-size:13px;font-weight:600;color:#2B3946;margin-bottom:7px;">Message <span style="color:#C9A45A;">*</span></span>
+              <textarea value="{{ values.message }}" onInput="{{ handlers.message }}" rows="5" placeholder="Tell us about your project or enquiry…" style="{{ fieldStyles.message }}" style-focus="border-color:#176BFF;box-shadow:0 0 0 3px rgba(23,107,255,0.15);"></textarea>
+              <sc-if value="{{ errors.message }}" hint-placeholder-val="{{ false }}"><span style="display:block;font-size:12.5px;color:#D64545;margin-top:6px;">{{ errors.message }}</span></sc-if>
+            </label>
+
+            <label style="display:flex;align-items:flex-start;gap:11px;margin-top:20px;cursor:pointer;">
+              <input type="checkbox" checked="{{ values.consent }}" onChange="{{ handlers.consent }}" style="width:18px;height:18px;margin-top:2px;flex:none;accent-color:#176BFF;">
+              <span style="font-size:13px;line-height:1.55;color:#5A6875;">I consent to Crown Power Energy Systems Ltd storing and processing my details to respond to this enquiry, in line with the <a href="PrivacyPolicy.dc.html" style="color:#176BFF;font-weight:600;">Privacy Policy</a>. <span style="color:#C9A45A;">*</span></span>
+            </label>
+            <sc-if value="{{ errors.consent }}" hint-placeholder-val="{{ false }}"><span style="display:block;font-size:12.5px;color:#D64545;margin-top:6px;">{{ errors.consent }}</span></sc-if>
+
+            <sc-if value="{{ hasErrorSummary }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:18px;background:#FDECEC;border:1px solid #F5C2C2;border-radius:10px;padding:12px 16px;font-size:13.5px;color:#B23333;">Please correct the highlighted fields and try again.</div>
+            </sc-if>
+
+            <button type="submit" disabled="{{ isLoading }}" style="{{ submitStyle }}" style-hover="filter:brightness(1.05);transform:translateY(-1px);">
+              <sc-if value="{{ isLoading }}" hint-placeholder-val="{{ false }}"><span style="width:17px;height:17px;border:2px solid rgba(7,17,31,0.35);border-top-color:#07111F;border-radius:50%;display:inline-block;animation:cpspin .7s linear infinite;"></span></sc-if>
+              <span>{{ submitLabel }}</span>
+            </button>
+            <p style="font-size:12px;color:#9AA7B4;margin:16px 0 0;text-align:center;">Protected by spam filtering. This form is a demonstration and does not submit to a live server.</p>
+          </form>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+</main>
+
+<dc-import name="Footer" hint-size="100%,520px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    values: { firstName: '', lastName: '', email: '', phone: '', company: '', interest: 'General enquiry', message: '', consent: false },
+    errors: {},
+    status: 'idle',
+  };
+
+  componentDidMount() {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    if (reduce || !('IntersectionObserver' in window)) { els.forEach(e => e.setAttribute('data-in', '1')); return; }
+    const io = new IntersectionObserver((ents) => { ents.forEach(en => { if (en.isIntersecting) { en.target.setAttribute('data-in', '1'); io.unobserve(en.target); } }); }, { threshold: 0.08 });
+    els.forEach(e => io.observe(e));
+    this._io = io;
+    this._safety = setTimeout(() => els.forEach(e => e.setAttribute('data-in', '1')), 2600);
+  }
+  componentWillUnmount() { if (this._io) this._io.disconnect(); if (this._safety) clearTimeout(this._safety); if (this._t) clearTimeout(this._t); }
+
+  set(field, val) {
+    this.setState(s => {
+      const errors = Object.assign({}, s.errors); delete errors[field];
+      return { values: Object.assign({}, s.values, { [field]: val }), errors };
+    });
+  }
+  validate() {
+    const v = this.state.values; const e = {};
+    if (!v.firstName.trim()) e.firstName = 'Please enter your first name.';
+    if (!v.lastName.trim()) e.lastName = 'Please enter your last name.';
+    if (!v.email.trim()) e.email = 'Please enter your email.';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email.trim())) e.email = 'Please enter a valid email address.';
+    if (!v.message.trim()) e.message = 'Please enter a message.';
+    if (!v.consent) e.consent = 'Please provide consent to proceed.';
+    return e;
+  }
+
+  icon(children) { return React.createElement('svg', { width: 18, height: 18, viewBox: '0 0 24 24', fill: 'none', stroke: '#176BFF', strokeWidth: 1.8, strokeLinecap: 'round', strokeLinejoin: 'round' }, children); }
+  sicon(children) { return React.createElement('svg', { width: 16, height: 16, viewBox: '0 0 24 24', fill: 'currentColor' }, children); }
+
+  renderVals() {
+    const R = React.createElement;
+    const p = (d, k) => R('path', { key: k, d });
+    const values = this.state.values;
+    const errors = this.state.errors;
+    const status = this.state.status;
+    const isLoading = status === 'loading';
+
+    const base = { width: '100%', padding: '13px 15px', fontSize: '15px', fontFamily: 'Inter,sans-serif', color: '#0C1722', background: '#fff', border: '1px solid #D5DCE4', borderRadius: '9px', outline: 'none', transition: 'border-color .18s, box-shadow .18s', display: 'block' };
+    const fs = (name) => Object.assign({}, base, errors[name] ? { borderColor: '#D64545' } : null, name === 'message' ? { resize: 'vertical', minHeight: '120px', fontFamily: 'Inter,sans-serif' } : null);
+    const fieldStyles = {};
+    ['firstName', 'lastName', 'email', 'phone', 'company', 'interest', 'message'].forEach(n => fieldStyles[n] = fs(n));
+
+    const h = {};
+    ['firstName', 'lastName', 'email', 'phone', 'company', 'message'].forEach(n => h[n] = (ev) => this.set(n, ev.target.value));
+    h.interest = (ev) => this.set('interest', ev.target.value);
+    h.consent = (ev) => this.set('consent', ev.target.checked);
+
+    return {
+      values, errors,
+      fieldStyles, handlers: h,
+      isSuccess: status === 'success',
+      showForm: status !== 'success',
+      isLoading,
+      hasErrorSummary: Object.keys(errors).length > 0,
+      submitLabel: isLoading ? 'Sending…' : 'Send Enquiry →',
+      submitStyle: {
+        marginTop: '24px', width: '100%', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '10px',
+        fontSize: '16px', fontWeight: 700, fontFamily: 'Inter,sans-serif', color: '#07111F',
+        padding: '15px 22px', border: 'none', borderRadius: '9px', cursor: isLoading ? 'wait' : 'pointer',
+        background: 'linear-gradient(180deg,#E6CB8B,#C9A45A)', boxShadow: '0 10px 26px -10px rgba(201,164,90,0.6)',
+        opacity: isLoading ? 0.85 : 1, transition: 'filter .2s, transform .2s',
+      },
+      interests: ['General enquiry', 'Renewable Integration', 'Smart Energy Technologies', 'Power Systems', 'Industrial & Commercial', 'Battery Energy Storage (BESS)', 'Smart Grid Transformers', 'Battery Products', 'Internships & Careers', 'Partnership', 'Other'],
+      onSubmit: (ev) => {
+        ev.preventDefault();
+        const e = this.validate();
+        if (Object.keys(e).length) { this.setState({ errors: e, status: 'error' }); return; }
+        this.setState({ status: 'loading' });
+        this._t = setTimeout(() => this.setState({ status: 'success' }), 1400);
+      },
+      reset: () => this.setState({ values: { firstName: '', lastName: '', email: '', phone: '', company: '', interest: 'General enquiry', message: '', consent: false }, errors: {}, status: 'idle' }),
+      contacts: [
+        { label: 'Email', value: 'info@crownpoweruk.co.uk', href: 'mailto:info@crownpoweruk.co.uk', icon: this.icon([p('M3 5h18v14H3z', 'a'), p('M3 7l9 6 9-6', 'b')]) },
+        { label: 'Phone', value: '+44 7492 046104', href: 'tel:+447492046104', icon: this.icon([p('M4 4h4l2 5-2 1.5a12 12 0 006 6L15 14l5 2v4a1 1 0 01-1 1A16 16 0 013 5a1 1 0 011-1z', 'a')]) },
+        { label: 'WhatsApp', value: '+44 7492 046104', href: 'https://wa.me/447492046104', icon: this.icon([R('circle', { key: 'c', cx: 12, cy: 12, r: 9 }), p('M8 10c0 4 2 6 6 6', 'a')]) },
+        { label: 'Head Office', value: 'West Midlands, England, UK', href: '#enquiry', icon: this.icon([p('M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z', 'a'), R('circle', { key: 'c', cx: 12, cy: 10, r: 2.5 })]) },
+      ],
+      offices: [
+        { flag: 'United Kingdom', detail: 'West Midlands, England — Head Office. info@crownpoweruk.co.uk · +44 7492 046104' },
+        { flag: 'Portugal', detail: 'Lisbon — aref.mashali@crownpower.pt · +351 910 163 080' },
+        { flag: 'United Arab Emirates', detail: 'Arab Bank Bldg, Port Saeed, Dubai · +971 052 689 7096' },
+      ],
+      socials: [
+        { label: 'LinkedIn', href: 'https://www.linkedin.com/in/aref-mashali-86a877258/', icon: this.sicon([p('M4.98 3.5a2.5 2.5 0 11-.01 5.001A2.5 2.5 0 014.98 3.5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05 4.02 0 4.76 2.65 4.76 6.1V21h-4v-5.4c0-1.3 0-2.95-1.8-2.95s-2.07 1.4-2.07 2.85V21H9z')]) },
+        { label: 'X', href: 'http://twitter.com/ArefMashaliUK', icon: this.sicon([p('M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.66l7.73-8.84L1.25 2.25H8.1l4.71 6.23 5.43-6.23zm-1.16 17.52h1.83L7.02 4.13H5.06z')]) },
+        { label: 'Instagram', href: 'http://instagram.com/arefmashaliuk', icon: R('svg', { width: 16, height: 16, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.8 }, [R('rect', { key: 'a', x: 3, y: 3, width: 18, height: 18, rx: 5 }), R('circle', { key: 'b', cx: 12, cy: 12, r: 4 }), R('circle', { key: 'c', cx: 17.5, cy: 6.5, r: 1, fill: 'currentColor', stroke: 'none' })]) },
+        { label: 'Facebook', href: 'http://m.facebook.com/aref.mashali.5', icon: this.sicon([p('M13 22v-8h3l.5-4H13V7.5c0-1.1.3-1.9 1.9-1.9H17V2.2C16.6 2.1 15.4 2 14.1 2 11.3 2 9.5 3.7 9.5 6.9V10H7v4h2.5v8z')]) },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

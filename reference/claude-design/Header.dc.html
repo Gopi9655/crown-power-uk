@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  a{text-decoration:none;}
+  @media (max-width: 980px){ #cp-desknav{display:none !important} #cp-deskcta{display:none !important} #cp-burger{display:flex !important} }
+  @media (min-width: 981px){ #cp-burger{display:none !important} }
+</style>
+</helmet>
+<header style="position:sticky;top:0;left:0;right:0;z-index:1000;font-family:Inter,sans-serif;" onMouseLeave="{{ onNavLeave }}">
+  <div style="{{ barStyle }}">
+    <a href="Home.dc.html" style="display:flex;align-items:center;gap:12px;margin-right:8px;">
+      <svg viewBox="0 0 120 96" width="34" height="27" aria-hidden="true" style="display:block;flex:none;">
+        <defs><linearGradient id="cpGoldH" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EAD199"/><stop offset="0.5" stop-color="#C9A45A"/><stop offset="1" stop-color="#A5813B"/></linearGradient></defs>
+        <path d="M18,74 L10,26 L37,56 L60,10 L83,56 L110,26 L102,74 Z" fill="url(#cpGoldH)"/>
+        <rect x="22" y="80" width="76" height="9" rx="3" fill="url(#cpGoldH)"/>
+      </svg>
+      <span style="display:flex;flex-direction:column;line-height:1;">
+        <span style="font-family:Manrope,sans-serif;font-weight:800;font-size:17px;letter-spacing:0.13em;color:#ffffff;">CROWN POWER</span>
+        <span style="font-family:Manrope,sans-serif;font-weight:600;font-size:9px;letter-spacing:0.34em;color:#C9A45A;margin-top:4px;">ENERGY SYSTEMS</span>
+      </span>
+    </a>
+
+    <nav id="cp-desknav" style="display:flex;align-items:center;gap:6px;margin-left:auto;">
+      <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="5">
+        <button type="button" onClick="{{ item.click }}" onMouseEnter="{{ item.enter }}" style="background:none;border:none;cursor:pointer;font-family:Inter,sans-serif;font-size:15px;font-weight:500;color:#DCE3EB;padding:8px 14px;border-radius:8px;letter-spacing:0.01em;transition:color .2s ease;" style-hover="color:#E1C278;">{{ item.label }}</button>
+      </sc-for>
+    </nav>
+
+    <div id="cp-deskcta" style="display:flex;align-items:center;gap:12px;margin-left:26px;">
+      <a href="Contact.dc.html" style="font-size:14.5px;font-weight:600;color:#EAF0F6;padding:10px 16px;border:1px solid rgba(255,255,255,0.22);border-radius:8px;transition:background .2s ease,border-color .2s ease;" style-hover="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.4);">Contact</a>
+      <a href="Contact.dc.html#enquiry" style="font-size:14.5px;font-weight:700;color:#07111F;padding:11px 18px;border-radius:8px;background:linear-gradient(180deg,#E6CB8B,#C9A45A);box-shadow:0 6px 18px -6px rgba(201,164,90,0.6);transition:filter .2s ease,transform .2s ease;" style-hover="filter:brightness(1.06);transform:translateY(-1px);">Request Consultation&nbsp;→</a>
+    </div>
+
+    <button id="cp-burger" type="button" onClick="{{ toggleMobile }}" aria-label="Open menu" style="display:none;margin-left:auto;background:none;border:1px solid rgba(255,255,255,0.22);border-radius:8px;width:44px;height:44px;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;">
+      <span style="display:block;width:20px;height:2px;background:#fff;border-radius:2px;"></span>
+      <span style="display:block;width:20px;height:2px;background:#fff;border-radius:2px;"></span>
+      <span style="display:block;width:20px;height:2px;background:#fff;border-radius:2px;"></span>
+    </button>
+  </div>
+
+  <div style="{{ panelStyle }}">
+    <div style="max-width:1280px;margin:0 auto;padding:34px 40px 42px;">
+      <div style="font-family:Manrope,sans-serif;font-size:11.5px;letter-spacing:0.28em;text-transform:uppercase;color:#C9A45A;margin-bottom:20px;">{{ activeLabel }}</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:6px 24px;">
+        <sc-for list="{{ activeItems }}" as="it" hint-placeholder-count="4">
+          <a href="{{ it.href }}" onClick="{{ closeMenu }}" style="display:block;padding:14px 16px;border-radius:10px;border:1px solid transparent;transition:background .18s ease,border-color .18s ease;" style-hover="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.09);">
+            <span style="display:block;font-family:Manrope,sans-serif;font-size:15.5px;font-weight:600;color:#F4F7FA;">{{ it.label }}</span>
+            <span style="display:block;font-size:13px;color:#8A98A6;margin-top:4px;line-height:1.45;">{{ it.desc }}</span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <div style="{{ mobileStyle }}">
+    <div style="display:flex;align-items:center;height:76px;padding:0 24px;border-bottom:1px solid rgba(255,255,255,0.08);">
+      <a href="Home.dc.html" onClick="{{ closeMobile }}" style="display:flex;align-items:center;gap:10px;">
+        <svg viewBox="0 0 120 96" width="30" height="24" aria-hidden="true" style="display:block;">
+          <defs><linearGradient id="cpGoldM" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EAD199"/><stop offset="0.5" stop-color="#C9A45A"/><stop offset="1" stop-color="#A5813B"/></linearGradient></defs>
+          <path d="M18,74 L10,26 L37,56 L60,10 L83,56 L110,26 L102,74 Z" fill="url(#cpGoldM)"/>
+          <rect x="22" y="80" width="76" height="9" rx="3" fill="url(#cpGoldM)"/>
+        </svg>
+        <span style="font-family:Manrope,sans-serif;font-weight:800;font-size:16px;letter-spacing:0.12em;color:#fff;">CROWN POWER</span>
+      </a>
+      <button type="button" onClick="{{ closeMobile }}" aria-label="Close menu" style="margin-left:auto;background:none;border:1px solid rgba(255,255,255,0.22);border-radius:8px;width:44px;height:44px;color:#fff;font-size:22px;cursor:pointer;line-height:1;">×</button>
+    </div>
+    <div style="padding:20px 24px 40px;">
+      <sc-for list="{{ menusList }}" as="sec" hint-placeholder-count="5">
+        <div style="padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.07);">
+          <div style="font-family:Manrope,sans-serif;font-size:11px;letter-spacing:0.26em;text-transform:uppercase;color:#C9A45A;margin-bottom:12px;">{{ sec.label }}</div>
+          <sc-for list="{{ sec.items }}" as="it" hint-placeholder-count="3">
+            <a href="{{ it.href }}" onClick="{{ closeMobile }}" style="display:block;font-family:Manrope,sans-serif;font-size:17px;font-weight:600;color:#EAF0F6;padding:9px 0;">{{ it.label }}</a>
+          </sc-for>
+        </div>
+      </sc-for>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-top:26px;">
+        <a href="Contact.dc.html" onClick="{{ closeMobile }}" style="text-align:center;font-size:16px;font-weight:600;color:#EAF0F6;padding:14px;border:1px solid rgba(255,255,255,0.25);border-radius:9px;">Contact</a>
+        <a href="Contact.dc.html#enquiry" onClick="{{ closeMobile }}" style="text-align:center;font-size:16px;font-weight:700;color:#07111F;padding:15px;border-radius:9px;background:linear-gradient(180deg,#E6CB8B,#C9A45A);">Request Consultation&nbsp;→</a>
+      </div>
+    </div>
+  </div>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { open: null, scrolled: false, mobileOpen: false };
+
+  componentDidMount() {
+    this._onScroll = () => {
+      const s = window.scrollY > 24;
+      if (s !== this.state.scrolled) this.setState({ scrolled: s });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+  }
+  componentWillUnmount() { window.removeEventListener('scroll', this._onScroll); }
+
+  get menus() {
+    return {
+      solutions: { label: 'Solutions', items: [
+        { label: 'Renewable Integration', href: 'Services.dc.html#renewable', desc: 'Solar, wind, storage, hybrid & microgrids' },
+        { label: 'Smart Energy Technologies', href: 'Services.dc.html#smart', desc: 'Smart grids, EMS, SCADA & monitoring' },
+        { label: 'Power Systems', href: 'Services.dc.html#power', desc: 'Grid design, substations & protection' },
+        { label: 'Industrial & Commercial', href: 'Services.dc.html#industrial', desc: 'Factories, data centres & UPS' },
+        { label: 'Maintenance & Support', href: 'Services.dc.html#specialised', desc: 'Audits, power quality & consulting' },
+      ]},
+      products: { label: 'Products', items: [
+        { label: 'Battery Energy Storage (BESS)', href: 'BESS.dc.html', desc: 'Scalable storage for resilient networks' },
+        { label: 'Smart Grid Transformers', href: 'GridTransformer.dc.html', desc: 'Intelligent distribution & monitoring' },
+        { label: 'Battery Products', href: 'BatteryProducts.dc.html', desc: 'Alkaline, NiMH & lithium-ion cells' },
+      ]},
+      industries: { label: 'Industries', items: [
+        { label: 'Industrial', href: 'Services.dc.html#sectors', desc: 'Manufacturing, processing & warehousing' },
+        { label: 'Commercial', href: 'Services.dc.html#sectors', desc: 'Offices, retail & hospitality' },
+        { label: 'Infrastructure', href: 'Services.dc.html#sectors', desc: 'Telecoms, transport & utilities' },
+        { label: 'Agriculture', href: 'Services.dc.html#sectors', desc: 'Farms, greenhouses & cold storage' },
+        { label: 'Energy & Utilities', href: 'Services.dc.html#sectors', desc: 'Generation, grid & distribution' },
+        { label: 'Data Centres', href: 'Services.dc.html#sectors', desc: 'Critical, resilient power' },
+      ]},
+      company: { label: 'Company', items: [
+        { label: 'About', href: 'About.dc.html', desc: 'Who we are' },
+        { label: 'Leadership & Team', href: 'MeetTheTeam.dc.html', desc: 'Meet our people' },
+        { label: 'Partners & Contractors', href: 'Partners.dc.html', desc: 'Our ecosystem' },
+        { label: 'Careers & Internships', href: 'Internships.dc.html', desc: 'Early-careers programmes' },
+        { label: 'Training', href: 'Training.dc.html', desc: 'Development & H&S' },
+        { label: 'Health & Safety', href: 'HealthSafety.dc.html', desc: 'Our commitment' },
+        { label: 'Legal Department', href: 'Legal.dc.html', desc: 'Compliance & governance' },
+      ]},
+      insights: { label: 'Insights', items: [
+        { label: 'Statements & Announcements', href: 'Announcements.dc.html', desc: 'Latest updates from Crown Power' },
+      ]},
+    };
+  }
+
+  renderVals() {
+    const variant = this.props.variant || 'solid';
+    const open = this.state.open;
+    const solid = variant === 'solid' || this.state.scrolled || !!open;
+
+    const barStyle = {
+      display: 'flex', alignItems: 'center', gap: '4px', height: '76px', padding: '0 40px',
+      background: solid ? 'rgba(7,17,31,0.94)' : 'transparent',
+      backdropFilter: solid ? 'saturate(150%) blur(14px)' : 'none',
+      WebkitBackdropFilter: solid ? 'saturate(150%) blur(14px)' : 'none',
+      borderBottom: solid ? '1px solid rgba(255,255,255,0.08)' : '1px solid transparent',
+      transition: 'background .3s ease, border-color .3s ease',
+    };
+    const panelStyle = {
+      position: 'absolute', left: 0, right: 0, top: '76px',
+      background: 'rgba(7,17,31,0.98)', backdropFilter: 'blur(18px)', WebkitBackdropFilter: 'blur(18px)',
+      borderBottom: '1px solid rgba(255,255,255,0.08)',
+      boxShadow: '0 40px 70px -24px rgba(0,0,0,0.7)',
+      opacity: open ? 1 : 0, visibility: open ? 'visible' : 'hidden',
+      transform: open ? 'translateY(0)' : 'translateY(-10px)',
+      pointerEvents: open ? 'auto' : 'none',
+      transition: 'opacity .26s ease, transform .26s ease, visibility .26s',
+    };
+    const enter = (k) => () => this.setState({ open: k });
+    const click = (k) => () => this.setState({ open: this.state.open === k ? null : k });
+    const keys = Object.keys(this.menus);
+    const navItems = keys.map(k => ({ key: k, label: this.menus[k].label, click: click(k), enter: enter(k) }));
+    const menusList = keys.map(k => ({ key: k, label: this.menus[k].label, items: this.menus[k].items }));
+    const active = open ? this.menus[open] : null;
+
+    return {
+      barStyle, panelStyle, navItems, menusList,
+      activeItems: active ? active.items : [],
+      activeLabel: active ? active.label : '',
+      onNavLeave: () => this.setState({ open: null }),
+      closeMenu: () => this.setState({ open: null }),
+      toggleMobile: () => this.setState({ mobileOpen: !this.state.mobileOpen, open: null }),
+      closeMobile: () => this.setState({ mobileOpen: false }),
+      mobileStyle: {
+        position: 'fixed', inset: 0, zIndex: 1200, background: '#07111F',
+        opacity: this.state.mobileOpen ? 1 : 0,
+        visibility: this.state.mobileOpen ? 'visible' : 'hidden',
+        transition: 'opacity .3s ease, visibility .3s', overflowY: 'auto',
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#fff;}
+  a{text-decoration:none;color:inherit;}
+  @media (prefers-reduced-motion: no-preference){
+    [data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+    [data-reveal][data-in="1"]{opacity:1;transform:none;}
+  }
+</style>
+</helmet>
+<div style="font-family:Inter,sans-serif;color:#0C1722;">
+<dc-import name="Header" variant="solid" hint-size="100%,76px"></dc-import>
+
+<main>
+  <!-- HERO -->
+  <section style="background:linear-gradient(115deg,#07111F,#0B2138);padding:clamp(90px,12vw,140px) 0 clamp(50px,7vw,80px);">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,40px);">
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.22em;color:#8FD0FF;text-transform:uppercase;margin-bottom:20px;">Company · People</div>
+      <h1 style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(34px,5vw,60px);line-height:1.06;letter-spacing:-0.02em;color:#fff;margin:0 0 20px;max-width:820px;text-wrap:balance;">Meet the team.</h1>
+      <p style="font-size:clamp(16px,1.6vw,19px);line-height:1.6;color:#B9C6D3;max-width:640px;margin:0;">A multidisciplinary team of engineers, technologists and specialists — combining industry experience with innovative approaches to deliver sustainable energy solutions.</p>
+    </div>
+  </section>
+
+  <!-- FILTER + GRID -->
+  <section style="padding:clamp(40px,6vw,72px) 0 clamp(64px,9vw,110px);background:#fff;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,40px);">
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px;">
+        <sc-for list="{{ filters }}" as="f" hint-placeholder-count="7">
+          <button type="button" onClick="{{ f.onClick }}" style="{{ f.style }}">{{ f.label }}</button>
+        </sc-for>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(214px,1fr));gap:20px;">
+        <sc-for list="{{ list }}" as="p" hint-placeholder-count="8">
+          <button type="button" onClick="{{ p.open }}" data-reveal style="text-align:left;background:#fff;border:1px solid #E4E9EF;border-radius:14px;overflow:hidden;cursor:pointer;padding:0;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s,border-color .25s;" style-hover="transform:translateY(-4px);box-shadow:0 22px 44px -26px rgba(11,31,51,0.4);border-color:#C9A45A;">
+            <div style="aspect-ratio:237/312;overflow:hidden;background:#0B1F33;">
+              <img loading="lazy" alt="{{ p.name }}" src="{{ p.img }}" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;" style-hover="transform:scale(1.05);">
+            </div>
+            <div style="padding:18px 18px 20px;display:flex;flex-direction:column;flex:1;">
+              <span style="display:inline-block;align-self:flex-start;font-size:10.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#C9A45A;background:#FBF6EA;border-radius:100px;padding:4px 10px;margin-bottom:12px;">{{ p.cat }}</span>
+              <h3 style="font-family:Manrope,sans-serif;font-weight:700;font-size:16.5px;line-height:1.25;margin:0 0 5px;color:#0C1722;">{{ p.name }}</h3>
+              <p style="font-size:13px;line-height:1.45;color:#5A6875;margin:0 0 12px;flex:1;">{{ p.role }}</p>
+              <span style="font-size:13px;font-weight:600;color:#176BFF;">View profile →</span>
+            </div>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding:clamp(56px,8vw,100px) 0;background:linear-gradient(120deg,#0B1F33,#0B2138);">
+    <div style="max-width:820px;margin:0 auto;padding:0 clamp(20px,5vw,40px);text-align:center;">
+      <h2 style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(26px,3.6vw,42px);line-height:1.1;letter-spacing:-0.02em;color:#fff;margin:0 0 18px;">Join our team.</h2>
+      <p style="font-size:17px;line-height:1.65;color:#B9C6D3;max-width:520px;margin:0 auto 32px;">We're always looking for talented people driven to shape the future of energy.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;">
+        <a href="Contact.dc.html" style="font-size:16px;font-weight:700;color:#07111F;padding:15px 28px;border-radius:9px;background:linear-gradient(180deg,#E6CB8B,#C9A45A);transition:transform .2s,filter .2s;" style-hover="transform:translateY(-2px);filter:brightness(1.05);">Apply Today →</a>
+        <a href="Internships.dc.html" style="font-size:16px;font-weight:600;color:#EAF0F6;padding:15px 28px;border-radius:9px;border:1px solid rgba(255,255,255,0.3);transition:background .2s;" style-hover="background:rgba(255,255,255,0.08);">Internships</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<dc-import name="Footer" hint-size="100%,520px"></dc-import>
+
+<!-- PROFILE MODAL -->
+<div style="{{ modalStyle }}" onClick="{{ closeModal }}">
+  <div role="dialog" aria-modal="true" onClick="{{ stop }}" style="{{ panelStyle }}">
+    <sc-if value="{{ hasSelected }}" hint-placeholder-val="{{ false }}">
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:0;">
+        <img alt="{{ sel.name }}" src="{{ sel.img }}" style="width:200px;height:100%;max-height:520px;object-fit:cover;display:block;background:#0B1F33;">
+        <div style="padding:32px 34px;position:relative;overflow-y:auto;max-height:520px;">
+          <button type="button" onClick="{{ closeModal }}" aria-label="Close" style="position:absolute;top:20px;right:22px;width:38px;height:38px;border-radius:9px;border:1px solid #E4E9EF;background:#fff;color:#43525F;font-size:20px;cursor:pointer;line-height:1;">×</button>
+          <span style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#C9A45A;background:#FBF6EA;border-radius:100px;padding:5px 12px;margin-bottom:16px;">{{ sel.cat }}</span>
+          <h3 style="font-family:Manrope,sans-serif;font-weight:800;font-size:26px;margin:0 0 6px;color:#0C1722;">{{ sel.name }}</h3>
+          <p style="font-family:Manrope,sans-serif;font-weight:600;font-size:15px;color:#176BFF;margin:0 0 20px;">{{ sel.role }}</p>
+          <p style="font-size:15px;line-height:1.7;color:#43525F;margin:0 0 20px;">{{ sel.bio }}</p>
+          <sc-if value="{{ sel.email }}" hint-placeholder-val="{{ false }}">
+            <a href="{{ sel.mailto }}" style="display:inline-flex;align-items:center;gap:9px;font-size:14.5px;font-weight:600;color:#0B1F33;border:1px solid #C9A45A;border-radius:9px;padding:11px 18px;">{{ sel.email }}</a>
+          </sc-if>
+        </div>
+      </div>
+    </sc-if>
+  </div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { filter: 'All', selected: null };
+
+  componentDidMount() {
+    this._observe();
+    this._key = (e) => { if (e.key === 'Escape' && this.state.selected) this.setState({ selected: null }); };
+    window.addEventListener('keydown', this._key);
+  }
+  componentDidUpdate() { this._observe(); }
+  _observe() {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const els = Array.from(document.querySelectorAll('[data-reveal]:not([data-in])'));
+    if (!els.length) return;
+    if (reduce || !('IntersectionObserver' in window)) { els.forEach(e => e.setAttribute('data-in', '1')); return; }
+    if (!this._io) this._io = new IntersectionObserver((ents) => { ents.forEach(en => { if (en.isIntersecting) { en.target.setAttribute('data-in', '1'); this._io.unobserve(en.target); } }); }, { threshold: 0.08 });
+    els.forEach(e => this._io.observe(e));
+    clearTimeout(this._safety);
+    this._safety = setTimeout(() => document.querySelectorAll('[data-reveal]:not([data-in])').forEach(e => e.setAttribute('data-in', '1')), 2600);
+  }
+  componentWillUnmount() { if (this._io) this._io.disconnect(); clearTimeout(this._safety); window.removeEventListener('keydown', this._key); }
+
+  media(id, ext) { return 'https://static.wixstatic.com/media/' + id + '~mv2.' + ext + '/v1/fill/w_500,h_640,al_c,q_85,enc_avif,quality_auto/x.' + ext; }
+
+  get team() {
+    return [
+      { name: 'Mr Aref Mashali', role: 'Company Director & Electrical Power Systems Engineer', cat: 'Leadership', id: 'f1cbb5_2b7da00fca9d40b1bf517848ef8c67ca', ext: 'png', email: 'arefm@crownpoweruk.co.uk', bio: 'Leads as Company Director while applying deep expertise in Electrical Power Systems Engineering across Crown Power\u2019s renewable and industrial projects.' },
+      { name: 'Ms Iara Oliveira', role: 'Company Secretary', cat: 'Leadership', id: 'f1cbb5_47dacefc571447d28d38b5fbd9c6fab7', ext: 'jpg', email: 'experience@crownpoweruk.co.uk', bio: 'Company Secretary managing corporate governance and ensuring efficient administrative operations and organisational compliance.' },
+      { name: 'Ms Alessandra Russo', role: 'Company Financial Advisor', cat: 'Business', id: 'f1cbb5_28782955ac434450828e567f3c8797fc', ext: 'jpg', email: 'info@crownpoweruk.co.uk', bio: 'Provides strategic financial guidance and manages monetary decisions to optimise business performance.' },
+      { name: 'Ms Emily Edwards', role: 'Business Law Expert', cat: 'Legal', id: 'f1cbb5_47b694ed883c48898857338d41985369', ext: 'jpg', email: 'attorneys@crownpoweruk-legals.co.uk', bio: 'Specialises in corporate legal frameworks and regulatory compliance \u2014 commercial contracts, corporate governance and business regulations \u2014 helping the organisation navigate complex legal landscapes while protecting its commercial interests.' },
+      { name: 'Ms Aimee Chen', role: 'Collaboration & Client Relations', cat: 'Business', id: 'f1cbb5_82169675e74e4eb48544f4245210fe82', ext: 'jpg', email: 'client@crownpoweruk.co.uk', bio: 'Brings extensive international experience in collaboration and client relations, fostering strategic partnerships and managing global client relationships across diverse markets.' },
+      { name: 'Ms Maryam Noorzadeh', role: 'Events Manager & Art Designer', cat: 'Business', id: 'f1cbb5_db2e7351d00146f0a1119420c789c546', ext: 'jpg', bio: 'Art designer and events manager, combining creative expertise with event planning to deliver exceptional experiences.' },
+      { name: 'Mr Abdussamad Asjid Saleem', role: 'Computer Hardware & Software Engineering', cat: 'Technology', id: 'f1cbb5_f65e1ec6e8af418bb2360f61a4ac4ef1', ext: 'jpg', bio: 'Combines in-depth knowledge of hardware architecture with advanced software development, delivering integrated computing solutions spanning system architecture, hardware-software integration and optimisation.' },
+      { name: 'Mr Murtadha Alkinani', role: 'PhD Researcher & Mechanical Engineer', cat: 'Engineering', id: 'f1cbb5_ee48312a865a4b0db5f8b54a48f06f99', ext: 'jpg', bio: 'Bridges academic research and practical engineering \u2014 mechanical system design, thermal dynamics and advanced manufacturing \u2014 contributing to both academic knowledge and industrial innovation.' },
+      { name: 'Ms Niloufar Javdani Bafarasat', role: 'Business & Market Intelligence (MSc)', cat: 'Business', id: 'f1cbb5_b51054bb73c9419c9e9d1e3f402c3b06', ext: 'jpg', bio: 'Business & Market Intelligence specialist leveraging strategic analysis and data-driven decision-making, integrating emerging technologies including AI into business development strategies.' },
+      { name: 'Mr Evan Murphy', role: 'Electrical & Construction Engineer', cat: 'Engineering', id: 'f1cbb5_55965a9efe49498fa0798c24e0cd9825', ext: 'jpg', bio: 'Oversees electrical system installations and manages power infrastructure projects.' },
+      { name: 'Mr Rahim Modhej', role: 'Electrical Power Systems Engineer', cat: 'Engineering', id: 'f1cbb5_039d1a1c270941fd8b9025a45a0e1bc3', ext: 'jpg', bio: 'Electrical power engineer specialising in renewable energy systems, dedicated to sustainable power solutions and collaborative innovation for a greener future.' },
+      { name: 'Ms Sheida Hooshmandi', role: 'PhD Sustainability Strategy & Transformation', cat: 'Sustainability', id: 'f1cbb5_1802bf506dc149d6b699739e856c469b', ext: 'jpg', bio: 'Guides sustainability transformations by developing tailored ESG strategies, leading change management, implementing sustainability metrics and advising on regulatory compliance and reporting frameworks.' },
+      { name: 'Mr Amirmohammad Sadeghi', role: 'IT Engineer', cat: 'Technology', id: 'f1cbb5_728c338872084908bf8d4e38eb44c7e4', ext: 'jpg', bio: 'Implements technical solutions and maintains digital infrastructure to ensure optimal system performance.' },
+      { name: 'Ms Shabnam Asadzadeh', role: 'International Business Management (MSc)', cat: 'Business', id: 'f1cbb5_79e54bd1bd8143399bbdc04b39568499', ext: 'jpg', bio: 'Focuses on cross-cultural leadership and global market strategies, helping the organisation navigate multinational operations and develop effective cross-border partnerships.' },
+      { name: 'Mr Lucas Schmit', role: 'Materials Engineer', cat: 'Engineering', id: 'f1cbb5_2762d8d006964b70993a7350801c0614', ext: 'jpg', bio: 'Develops, tests and processes materials \u2014 metals, ceramics, plastics, composites and semiconductors \u2014 to meet engineering, chemical and electrical standards.' },
+      { name: 'Ms Ella Jones', role: 'IT Engineering Expert', cat: 'Technology', id: 'f1cbb5_db00783641ee4b4fbd9d43a8c2dc3311', ext: 'jpg', bio: 'Develops innovative technological solutions across software development, system architecture and network infrastructure while maintaining robust security and performance.' },
+      { name: 'Ms Devon Stevens', role: 'Computer Science & Engineering', cat: 'Technology', id: 'f1cbb5_94f90add293c437e84b7639369698d5d', ext: 'jpg', bio: 'Combines theoretical knowledge with practical applications across software development, systems architecture and advanced computing technologies.' },
+      { name: 'Ms Shaista', role: 'Sustainability & Environmental Management · H&S Officer', cat: 'Sustainability', id: 'f1cbb5_e7d73c68eb2649b68bd3332d0e94f17d', ext: 'jpg', bio: 'Health & Safety Officer specialising in sustainability and environmental management \u2014 resource management, environmental impact assessment and sustainable development practices.' },
+      { name: 'Mr Saadeldin Ali', role: 'Electrical Power Systems Engineer', cat: 'Engineering', id: 'f1cbb5_cf62e77646b146aeabe1f4ffd0778995', ext: 'jpg', bio: 'Electrical power engineer specialising in renewable energy systems, dedicated to sustainable power solutions and collaborative innovation for a greener future.' },
+      { name: 'Mr Osman Mohammad', role: 'Electrical Power Systems Engineer', cat: 'Engineering', id: 'f1cbb5_9702cbeded3b4c4ca93bbe99cd8fc9fc', ext: 'jpg', bio: 'Electrical power engineer specialising in renewable energy systems, dedicated to sustainable power solutions and collaborative innovation for a greener future.' },
+      { name: 'Ms Xiaoxiao Li', role: 'Engineering Management (MSc)', cat: 'Business', id: 'f1cbb5_b0408783c80c40189bed0360a0b641e5', ext: 'jpg', bio: 'Combines business and engineering expertise \u2014 marketing, organisational management, accounting and project management \u2014 to manage engineering projects and teams effectively.' },
+      { name: 'Ms Raian Mohamed khair', role: 'Electrical & Electronic Engineering', cat: 'Engineering', id: 'f1cbb5_b76b4d1083fe4a08aeb5479405a11309', ext: 'jpg', bio: 'Focuses on electrical systems and electronic devices \u2014 circuit design, signal processing, power systems and telecommunications \u2014 developing practical solutions for modern technological challenges.' },
+      { name: 'Mr Jianming Wang', role: 'Artificial Intelligence (MSc)', cat: 'Technology', id: 'f1cbb5_cf55ffc2fa3e4e409adab3f90c0a087e', ext: 'jpg', bio: 'Specialises in AI \u2014 machine learning, neural networks and data analytics \u2014 creating intelligent systems that process complex information, recognise patterns and support decision-making.' },
+      { name: 'Ms Andreia Lopes Da Silvia', role: 'Business Management & HR', cat: 'Business', id: 'f1cbb5_5bc34407f3694432a657402aaba2ff82', ext: 'jpg', bio: 'Specialises in business management and human resources, aligning human capital with organisational objectives across strategic and operational HR.' },
+      { name: 'Mr Ragavan Rajkumar', role: 'Automotive Engineering (MSc)', cat: 'Engineering', id: 'f1cbb5_38c906b191054c7a933c605d58574671', ext: 'jpg', bio: 'MSc in Automotive Engineering with expertise in powertrain efficiency and vehicle dynamics, spanning both combustion engines and emerging electric vehicle systems.' },
+      { name: 'Mr Bartek Kowalczyk', role: 'Automotive Engineering (MSc)', cat: 'Engineering', id: 'f1cbb5_9f088de096ad4fff8201c627f93d3081', ext: 'jpg', bio: 'Automotive engineering professional with an MSc, bringing advanced knowledge of vehicle design, performance optimisation and sustainable transportation solutions.' },
+      { name: 'Ms Jingting Jiao', role: 'Electrical Power Systems Engineer', cat: 'Engineering', id: 'f1cbb5_2015b25c30784d018101da9a4b4640a0', ext: 'jpg', bio: 'Electrical power engineer specialising in renewable energy systems, dedicated to sustainable power solutions and collaborative innovation for a greener future.' },
+      { name: 'Mr Rudra Krishna', role: 'Electrical & Electronics Engineer (MSc)', cat: 'Engineering', id: 'f1cbb5_26109cddb24749d7b6145f619e4a4e06', ext: 'jpg', bio: 'Expertise in MATLAB, Simulink and Simscape; skilled in transformer sizing, cable and circuit-breaker selection, panel load calculations, control systems, electrical machines and power electronics.' },
+      { name: 'Mr Yiyu Ding', role: 'Electrical Power System Engineering (MSc)', cat: 'Engineering', id: 'f1cbb5_005b986d5be5424a82e6d8d77a2f7ecc', ext: 'jpg', bio: 'Electrical power engineer specialising in renewable energy systems, dedicated to sustainable power solutions and collaborative innovation for a greener future.' },
+      { name: 'Mr Demir Denise', role: 'PhD Digital Pedagogy', cat: 'Technology', id: 'f1cbb5_af2d1f1d90b04deb8c7106c33507a4e8', ext: 'jpg', bio: 'Education professional specialising in digital pedagogy and innovative teaching methods, integrating AI technologies and authentic assessment into learning frameworks.' },
+      { name: 'Ms Shereen Zaher Ibrahim Elmaghraby', role: 'Human Resources Specialist', cat: 'Business', id: 'f1cbb5_fc4311d3e1db40719a9a99ccdb1cd964', ext: 'jpg', bio: 'HR specialist with hands-on experience in recruitment and talent acquisition, personnel affairs, employee records, onboarding/offboarding and HR reporting, with strong interpersonal and organisational skills.' },
+    ];
+  }
+
+  renderVals() {
+    const cats = ['All', 'Leadership', 'Engineering', 'Technology', 'Business', 'Sustainability', 'Legal'];
+    const filter = this.state.filter;
+    const filters = cats.map(c => ({
+      label: c,
+      onClick: () => this.setState({ filter: c }),
+      style: {
+        cursor: 'pointer', fontFamily: 'Inter,sans-serif', fontSize: '14px', fontWeight: 600,
+        padding: '10px 18px', borderRadius: '100px', transition: 'all .18s ease',
+        border: '1px solid ' + (filter === c ? '#C9A45A' : '#E0E6EC'),
+        background: filter === c ? 'linear-gradient(180deg,#E6CB8B,#C9A45A)' : '#fff',
+        color: filter === c ? '#07111F' : '#43525F',
+      },
+    }));
+    const list = this.team.filter(p => filter === 'All' || p.cat === filter).map(p => Object.assign({}, p, {
+      img: this.media(p.id, p.ext),
+      open: () => this.setState({ selected: p }),
+    }));
+    const sel = this.state.selected;
+    const open = !!sel;
+    return {
+      filters, list,
+      hasSelected: open,
+      sel: sel ? Object.assign({}, sel, { img: this.media(sel.id, sel.ext), mailto: sel.email ? 'mailto:' + sel.email : '#' }) : {},
+      closeModal: () => this.setState({ selected: null }),
+      stop: (e) => e.stopPropagation(),
+      modalStyle: {
+        position: 'fixed', inset: 0, zIndex: 2000, display: open ? 'flex' : 'none',
+        alignItems: 'center', justifyContent: 'center', padding: '20px',
+        background: 'rgba(4,9,18,0.72)', backdropFilter: 'blur(6px)', WebkitBackdropFilter: 'blur(6px)',
+      },
+      panelStyle: {
+        width: 'min(700px,94vw)', maxHeight: '86vh', background: '#fff', borderRadius: '18px',
+        overflow: 'hidden', boxShadow: '0 50px 90px -30px rgba(0,0,0,0.6)',
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>
