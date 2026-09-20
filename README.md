@@ -59,11 +59,16 @@ For the browser audit, start the production server, then run:
 ```sh
 npx playwright install chromium
 npm run qa
+npm run qa:images
+npm run qa:layout
+npm run qa:interactions
 ```
 
-An existing Chromium executable can be selected with `CHROMIUM_PATH=/usr/bin/chromium`. `QA_BASE_URL` defaults to `http://127.0.0.1:3000`. Playwright and axe are development-only dependencies. The audit checks all sitemap routes, H1/canonical metadata, internal links/anchors, browser errors, accessibility and all 12 requested viewport widths.
+An existing Chromium executable can be selected with `CHROMIUM_PATH=/usr/bin/chromium`. `QA_BASE_URL` defaults to `http://127.0.0.1:3000`. Playwright and axe are development-only dependencies. The route audit checks all sitemap routes, H1/canonical metadata, internal links/anchors, missing-route handling, browser errors, accessibility and all 12 requested viewport widths. The image audit waits for each lazy image to decode and checks original, fallback and selected optimized image URLs. The layout audit uses a temporary local Chromium extension for actual browser zoom. The interaction audit checks the unconfigured-delivery build and intercepts browser submissions; it never sends email.
 
-Local QA evidence is in `artifacts/rebuild-qa/`:
+Stop the production server before rebuilding, then start it from the finished build. Do not overwrite its build during a QA run. The final investigation and results are recorded in [docs/final-qa.md](docs/final-qa.md).
+
+Local QA evidence is generated in `artifacts/rebuild-qa/` (ignored by Git; screenshots, browser profiles and logs should not be committed):
 
 - 20 routes; 240 viewport checks at 1920, 1600, 1440, 1366, 1280, 1180, 1024, 900, 768, 430, 390 and 360px.
 - Actual Chromium browser zoom at 125%, 150% and 200% across the main page templates, using the browser's `tabs.setZoom` API.

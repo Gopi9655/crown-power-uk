@@ -34,18 +34,22 @@ const editorial = {
     component: WhyGreenEnergyPage,
   },
 };
+const contentSlugs = new Set([
+  ...Object.keys(legalPages),
+  ...Object.keys(editorial),
+]);
 export function generateStaticParams() {
-  return [...Object.keys(legalPages), ...Object.keys(editorial)].map(
-    (slug) => ({ slug }),
-  );
+  return [...contentSlugs].map((slug) => ({ slug }));
 }
-export const dynamicParams = false;
+// Keep approved pages prerendered; handle unknown URLs with notFound().
+// Next 16.3.4 logs NoFallbackError for dynamicParams=false on missing slugs.
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  if (!contentSlugs.has(slug)) notFound();
   const legal = legalPages[slug];
   const page = editorial[slug as keyof typeof editorial];
   if (legal) return pageMetadata(legal.title, legal.summary, `/${slug}`);
@@ -58,6 +62,7 @@ export default async function ContentPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  if (!contentSlugs.has(slug)) notFound();
   if (legalPages[slug]) return <LegalLayout page={legalPages[slug]} />;
   const page = editorial[slug as keyof typeof editorial];
   if (!page) notFound();

@@ -21,7 +21,13 @@ await context.addInitScript(() =>
   ),
 );
 const page = await context.newPage();
-const results = { pages: [], overflows: [], errors: [], brokenLinks: [] };
+const results = {
+  pages: [],
+  overflows: [],
+  errors: [],
+  brokenLinks: [],
+  notFound: [],
+};
 page.on("pageerror", (error) => results.errors.push(error.message));
 const links = new Set();
 try {
@@ -82,6 +88,27 @@ try {
       if (!found) results.brokenLinks.push({ href, missingAnchor: true });
     }
   }
+  // Unknown slugs must render the real 404, including Object prototype names.
+  for (const route of [
+    "/qa-missing-page",
+    "/favicon.ico",
+    "/constructor",
+    "/toString",
+    "/__proto__",
+    "/products/qa-missing-page",
+  ]) {
+    const response = await page.goto(base + route);
+    results.notFound.push({
+      route,
+      status: response.status(),
+      heading: await page.locator("h1").textContent(),
+      noindex: await page
+        .locator('meta[name="robots"]')
+        .evaluateAll((elements) =>
+          elements.some((element) => element.content.includes("noindex")),
+        ),
+    });
+  }
   mkdirSync("artifacts/rebuild-qa", { recursive: true });
   writeFileSync(
     "artifacts/rebuild-qa/audit.json",
@@ -92,13 +119,22 @@ try {
       (p) =>
         p.status === 200 &&
         p.headings === 1 &&
-        p.canonical.endsWith(p.route) &&
+        new URL(p.canonical).pathname === p.route &&
         p.violations.length === 0,
     ),
     "Route, metadata or accessibility check failed",
   );
   assert.equal(results.overflows.length, 0, "Page overflow detected");
   assert.equal(results.errors.length, 0, "Browser runtime errors detected");
+  assert(
+    results.notFound.every(
+      (result) =>
+        result.status === 404 &&
+        result.noindex &&
+        result.heading === "Let’s get you connected.",
+    ),
+    "Missing routes must return the branded 404 with noindex",
+  );
   assert.equal(
     results.brokenLinks.length,
     0,

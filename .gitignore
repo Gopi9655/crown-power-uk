@@ -12,6 +12,7 @@
 
 # testing
 /coverage
+/artifacts/rebuild-qa/
 
 # next.js
 /.next/
