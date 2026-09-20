@@ -1,0 +1,106 @@
+{
+  "reviewNote": "This policy is a structured draft for the redesigned website. The specific data collected, processors used, analytics, cookies and retention periods must be confirmed by Crown Power and its legal advisers before publication.",
+  "sections": [
+    {
+      "id": "intro",
+      "h": "1. Who we are",
+      "paras": [
+        "Crown Power Energy Systems Ltd (\"Crown Power\", \"we\", \"us\") is the data controller for personal data collected through this website. We are a company registered in England and Wales (Company No. 16070400).",
+        "This policy explains what personal data we collect, why we collect it, how we use it and the rights available to you."
+      ]
+    },
+    {
+      "id": "collect",
+      "h": "2. Information we collect",
+      "paras": [
+        "We collect information you provide directly to us — for example when you complete an enquiry, application or contact form."
+      ],
+      "list": [
+        "Contact details such as your name, email address and telephone number",
+        "Information about your enquiry, project or application",
+        "Any documents you choose to share with us",
+        "Basic technical data collected automatically when you use the site"
+      ]
+    },
+    {
+      "id": "use",
+      "h": "3. How we use your information",
+      "paras": [
+        "We use personal data to respond to your enquiry, assess applications, provide our services and communicate with you."
+      ],
+      "list": [
+        "Responding to enquiries and providing information you request",
+        "Assessing internship, training and job applications",
+        "Managing our relationship with clients, partners and contractors",
+        "Meeting our legal and regulatory obligations"
+      ]
+    },
+    {
+      "id": "basis",
+      "h": "4. Lawful basis for processing",
+      "paras": [
+        "We rely on one or more lawful bases under applicable data-protection law, including your consent, the performance of a contract, our legitimate interests in operating our business, and compliance with legal obligations."
+      ]
+    },
+    {
+      "id": "sharing",
+      "h": "5. Sharing your information",
+      "paras": [
+        "We do not sell your personal data. We may share it with trusted service providers who help us operate our business, and where required by law. Any such sharing is subject to appropriate safeguards."
+      ]
+    },
+    {
+      "id": "retention",
+      "h": "6. How long we keep it",
+      "paras": [
+        "We retain personal data only for as long as necessary for the purposes described in this policy, or as required by law, after which it is securely deleted."
+      ]
+    },
+    {
+      "id": "rights",
+      "h": "7. Your rights",
+      "paras": [
+        "Subject to applicable law, you have rights over your personal data."
+      ],
+      "list": [
+        "Access to the personal data we hold about you",
+        "Correction of inaccurate data",
+        "Erasure of your data in certain circumstances",
+        "Objection to, or restriction of, certain processing",
+        "Withdrawal of consent where processing is based on consent"
+      ]
+    },
+    {
+      "id": "contact",
+      "h": "8. Contact & complaints",
+      "paras": [
+        "To exercise your rights or ask a question, please contact us using the details below. If you are in the UK and are not satisfied with our response, you have the right to complain to the Information Commissioner’s Office (ICO)."
+      ]
+    }
+  ],
+  "related": [
+    {
+      "label": "Cookie Policy",
+      "href": "/cookies"
+    },
+    {
+      "label": "Terms & Conditions",
+      "href": "/terms"
+    },
+    {
+      "label": "Accessibility",
+      "href": "/accessibility"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  ],
+  "title": "Privacy Policy",
+  "summary": "How Crown Power Energy Systems Ltd collects, uses and protects personal data.",
+  "eyebrow": "Legal",
+  "updated": "Last reviewed 2025 · pending final legal confirmation",
+  "contactHeading": "Data protection enquiries",
+  "contactNote": "For any question about how we handle your personal data, or to exercise your rights, contact us.",
+  "contactEmail": "info@crownpoweruk.co.uk"
+}

@@ -1,27 +1,47 @@
 import Image from "next/image";
-import Link from "next/link";
+import type { ReactNode } from "react";
 import { Container } from "./Container";
-
-export function PageHero({ eyebrow, title, intro, image, primary, secondary }: {
+export function PageHero({
+  eyebrow,
+  title,
+  description,
+  image,
+  children,
+  home = false,
+  light = false,
+}: {
   eyebrow: string;
-  title: string;
-  intro: string;
+  title: ReactNode;
+  description: string;
   image?: string;
-  primary?: { label: string; href: string };
-  secondary?: { label: string; href: string };
+  children?: ReactNode;
+  home?: boolean;
+  light?: boolean;
 }) {
   return (
-    <section className={`page-hero ${image ? "page-hero--image" : ""}`}>
-      {image && <Image src={image} alt="" fill priority sizes="100vw" className="page-hero__image" />}
-      <div className="page-hero__scrim" />
-      <Container className="page-hero__inner">
-        <p className="hero-eyebrow"><span />{eyebrow}</p>
-        <h1>{title}</h1>
-        <p className="page-hero__intro">{intro}</p>
-        {(primary || secondary) && <div className="hero-actions">
-          {primary && <Link href={primary.href} className="button button--gold">{primary.label} <span aria-hidden="true">→</span></Link>}
-          {secondary && <Link href={secondary.href} className="button button--outline-light">{secondary.label}</Link>}
-        </div>}
+    <section
+      className={`page-hero ${home ? "home-hero" : ""} ${light ? "light-hero" : ""}`}
+    >
+      {image && (
+        <>
+          <Image
+            className="hero-image"
+            src={image}
+            alt=""
+            fill
+            sizes="100vw"
+            preload
+          />
+          <div className="hero-shade" />
+        </>
+      )}
+      <Container>
+        <div className="hero-copy">
+          <p className="eyebrow">{eyebrow}</p>
+          <h1>{title}</h1>
+          <p className="hero-description">{description}</p>
+          {children && <div className="actions">{children}</div>}
+        </div>
       </Container>
     </section>
   );

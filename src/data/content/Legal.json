@@ -1,0 +1,68 @@
+{
+  "reviewNote": "The scope and description of the Legal Department must be confirmed by Crown Power. We do not represent the department as a regulated law firm, nor claim solicitor credentials or legal services that have not been verified.",
+  "sections": [
+    {
+      "id": "about",
+      "h": "1. About the Legal Department",
+      "paras": [
+        "Crown Power maintains a dedicated point of contact for legal and corporate matters. It handles formal correspondence and coordinates legal and compliance questions relating to the company."
+      ]
+    },
+    {
+      "id": "scope",
+      "h": "2. What it handles",
+      "paras": ["Typical matters directed to the Legal Department include:"],
+      "list": [
+        "Formal legal and corporate correspondence",
+        "Questions relating to our policies and terms",
+        "Compliance and governance enquiries",
+        "Contractual and commercial documentation"
+      ]
+    },
+    {
+      "id": "corporate",
+      "h": "3. Corporate information",
+      "paras": [
+        "Crown Power Energy Systems Ltd is registered in England and Wales."
+      ],
+      "list": [
+        "Company No. 16070400",
+        "VAT Registration No. 480 0284 11",
+        "Registered Office: Crown Way, Cardiff, CF14 3UZ",
+        "Head Office: West Midlands, England, UK"
+      ]
+    },
+    {
+      "id": "contact",
+      "h": "4. How to get in touch",
+      "paras": [
+        "Please direct legal and corporate correspondence to the dedicated email below. For general enquiries, use our main contact channels instead so your message reaches the right team quickly."
+      ]
+    }
+  ],
+  "related": [
+    {
+      "label": "Terms & Conditions",
+      "href": "/terms"
+    },
+    {
+      "label": "Privacy Policy",
+      "href": "/privacy"
+    },
+    {
+      "label": "About Crown Power",
+      "href": "/about"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  ],
+  "title": "Legal Department",
+  "summary": "The point of contact for legal and corporate matters relating to Crown Power Energy Systems Ltd.",
+  "eyebrow": "Company",
+  "updated": "Last reviewed 2025 · scope to be confirmed",
+  "contactHeading": "Contact the Legal Department",
+  "contactNote": "For legal and corporate correspondence, please use the dedicated legal contact.",
+  "contactEmail": "attorneys@crownpoweruk-legals.co.uk"
+}

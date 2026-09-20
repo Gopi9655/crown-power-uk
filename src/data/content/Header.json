@@ -1,0 +1,137 @@
+{
+  "solutions": {
+    "label": "Solutions",
+    "items": [
+      {
+        "label": "Renewable Integration",
+        "href": "/services#renewable",
+        "desc": "Solar, wind, storage, hybrid & microgrids"
+      },
+      {
+        "label": "Smart Energy Technologies",
+        "href": "/services#smart",
+        "desc": "Smart grids, EMS, SCADA & monitoring"
+      },
+      {
+        "label": "Power Systems",
+        "href": "/services#power",
+        "desc": "Grid design, substations & protection"
+      },
+      {
+        "label": "Industrial & Commercial",
+        "href": "/services#industrial",
+        "desc": "Factories, data centres & UPS"
+      },
+      {
+        "label": "Maintenance & Support",
+        "href": "/services#specialised",
+        "desc": "Audits, power quality & consulting"
+      }
+    ]
+  },
+  "products": {
+    "label": "Products",
+    "items": [
+      {
+        "label": "Battery Energy Storage (BESS)",
+        "href": "/products/bess",
+        "desc": "Scalable storage for resilient networks"
+      },
+      {
+        "label": "Smart Grid Transformers",
+        "href": "/products/smart-grid-transformer",
+        "desc": "Intelligent distribution & monitoring"
+      },
+      {
+        "label": "Battery Products",
+        "href": "/products/battery-products",
+        "desc": "Alkaline, NiMH & lithium-ion cells"
+      }
+    ]
+  },
+  "industries": {
+    "label": "Industries",
+    "items": [
+      {
+        "label": "Industrial",
+        "href": "/services#sectors",
+        "desc": "Manufacturing, processing & warehousing"
+      },
+      {
+        "label": "Commercial",
+        "href": "/services#sectors",
+        "desc": "Offices, retail & hospitality"
+      },
+      {
+        "label": "Infrastructure",
+        "href": "/services#sectors",
+        "desc": "Telecoms, transport & utilities"
+      },
+      {
+        "label": "Agriculture",
+        "href": "/services#sectors",
+        "desc": "Farms, greenhouses & cold storage"
+      },
+      {
+        "label": "Energy & Utilities",
+        "href": "/services#sectors",
+        "desc": "Generation, grid & distribution"
+      },
+      {
+        "label": "Data Centres",
+        "href": "/services#sectors",
+        "desc": "Critical, resilient power"
+      }
+    ]
+  },
+  "company": {
+    "label": "Company",
+    "items": [
+      {
+        "label": "About",
+        "href": "/about",
+        "desc": "Who we are"
+      },
+      {
+        "label": "Leadership & Team",
+        "href": "/team",
+        "desc": "Meet our people"
+      },
+      {
+        "label": "Partners & Contractors",
+        "href": "/partners",
+        "desc": "Our ecosystem"
+      },
+      {
+        "label": "Careers & Internships",
+        "href": "/internships",
+        "desc": "Early-careers programmes"
+      },
+      {
+        "label": "Training",
+        "href": "/training",
+        "desc": "Development & H&S"
+      },
+      {
+        "label": "Health & Safety",
+        "href": "/health-safety",
+        "desc": "Our commitment"
+      },
+      {
+        "label": "Legal Department",
+        "href": "/legal",
+        "desc": "Compliance & governance"
+      }
+    ]
+  },
+  "insights": {
+    "label": "Insights",
+    "items": [
+      {
+        "label": "Statements & Announcements",
+        "href": "/announcements",
+        "desc": "Latest updates from Crown Power"
+      }
+    ]
+  }
+}

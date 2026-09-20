@@ -1,0 +1,155 @@
+{
+  "trust": [
+    {
+      "title": "Registered in England & Wales",
+      "sub": "Company No. 16070400"
+    },
+    {
+      "title": "Electrical power engineering",
+      "sub": "Design · install · maintain"
+    },
+    {
+      "title": "International presence",
+      "sub": "UK · Portugal · UAE"
+    }
+  ],
+  "capabilities": [
+    {
+      "n": "01",
+      "title": "Renewable & Hybrid Power",
+      "desc": "Solar, wind, battery storage, hybrid systems and microgrids engineered for performance.",
+      "img": "/images/services/renewable-integration.jpg",
+      "href": "/services#renewable"
+    },
+    {
+      "n": "02",
+      "title": "Smart Energy Technologies",
+      "desc": "Smart grids, energy management, automation, remote monitoring and SCADA.",
+      "img": "/images/services/smart-energy-technologies.jpg",
+      "href": "/services#smart"
+    },
+    {
+      "n": "03",
+      "title": "Power Systems Engineering",
+      "desc": "Grid infrastructure, distribution, substations, switchgear and protection.",
+      "img": "/images/services/power-systems.jpg",
+      "href": "/services#power"
+    },
+    {
+      "n": "04",
+      "title": "Industrial & Commercial",
+      "desc": "Factories, buildings, data centres, emergency power and UPS systems.",
+      "img": "/images/services/industrial-commercial.jpg",
+      "href": "/services#industrial"
+    },
+    {
+      "n": "05",
+      "title": "Specialist Services",
+      "desc": "Power-quality analysis, energy audits, preventive maintenance and consulting.",
+      "img": "/images/services/specialised-services.jpg",
+      "href": "/services#specialised"
+    }
+  ],
+  "technologies": [
+    {
+      "tag": "BESS",
+      "title": "Battery Energy Storage Systems",
+      "desc": "Scalable storage for peak management, renewable integration and grid resilience.",
+      "img": "/images/bess/battery-energy-storage.jpg",
+      "href": "/products/bess"
+    },
+    {
+      "tag": "Transformers",
+      "title": "Smart Grid Transformers",
+      "desc": "Intelligent distribution with monitoring for efficient, reliable networks.",
+      "img": "/images/services/specialised-services.jpg",
+      "href": "/products/smart-grid-transformer"
+    },
+    {
+      "tag": "Batteries",
+      "title": "Battery Products",
+      "desc": "Alkaline, NiMH and lithium-ion cells across common formats.",
+      "img": "/images/bess/battery-products.jpg",
+      "href": "/products/battery-products"
+    }
+  ],
+  "industries": [
+    {
+      "title": "Industrial",
+      "desc": "Manufacturing & processing",
+      "img": "/images/services/power-systems.jpg"
+    },
+    {
+      "title": "Commercial",
+      "desc": "Offices, retail & hospitality",
+      "img": "/images/services/industrial-commercial.jpg"
+    },
+    {
+      "title": "Infrastructure",
+      "desc": "Telecoms, transport & utilities",
+      "img": "/images/home/advanced-power-engineering.jpg"
+    },
+    {
+      "title": "Agriculture",
+      "desc": "Farms, greenhouses & storage",
+      "img": "/images/services/renewable-integration.jpg"
+    },
+    {
+      "title": "Energy & Utilities",
+      "desc": "Generation & distribution",
+      "img": "/images/home/wind-energy-transition.jpg"
+    },
+    {
+      "title": "Data Centres",
+      "desc": "Critical, resilient power",
+      "img": "/images/services/smart-energy-technologies.jpg"
+    }
+  ],
+  "process": [
+    {
+      "n": "STEP 01",
+      "title": "Assess",
+      "desc": "Site assessment, energy audit and feasibility to define the right approach."
+    },
+    {
+      "n": "STEP 02",
+      "title": "Engineer",
+      "desc": "System design, specification and technical planning for your requirements."
+    },
+    {
+      "n": "STEP 03",
+      "title": "Integrate",
+      "desc": "Installation and integration with existing infrastructure and controls."
+    },
+    {
+      "n": "STEP 04",
+      "title": "Commission",
+      "desc": "Testing, commissioning and handover to verified operational standards."
+    },
+    {
+      "n": "STEP 05",
+      "title": "Support",
+      "desc": "Preventive maintenance, monitoring and long-term technical support."
+    }
+  ],
+  "offices": [
+    {
+      "flag": "United Kingdom",
+      "city": "West Midlands",
+      "detail": "Head Office — England, UK. Registered in England & Wales, Company No. 16070400.",
+      "contact": "info@crownpoweruk.co.uk"
+    },
+    {
+      "flag": "Portugal",
+      "city": "Lisbon",
+      "detail": "European branch supporting projects across the region.",
+      "contact": "aref.mashali@crownpower.pt"
+    },
+    {
+      "flag": "United Arab Emirates",
+      "city": "Dubai",
+      "detail": "Arab Bank Bldg, Port Saeed, Dubai, UAE.",
+      "contact": "+971 052 689 7096"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "benefits": [
+    {
+      "title": "Energy Storage",
+      "desc": "Capture surplus generation and hold it until it is needed most."
+    },
+    {
+      "title": "Peak Management",
+      "desc": "Shave demand peaks and reduce exposure to high-tariff periods."
+    },
+    {
+      "title": "Renewable Integration",
+      "desc": "Smooth the intermittency of solar and wind for steady supply."
+    },
+    {
+      "title": "Grid Resilience",
+      "desc": "Backup and stabilisation to keep critical operations running."
+    },
+    {
+      "title": "Commercial & Industrial",
+      "desc": "Behind-the-meter storage for facilities, sites and estates."
+    },
+    {
+      "title": "Scalable Architecture",
+      "desc": "Modular capacity that grows in step with your requirements."
+    }
+  ],
+  "applications": [
+    "Renewable firming",
+    "Backup power",
+    "Load shifting",
+    "Peak shaving",
+    "Frequency response",
+    "Microgrids",
+    "EV charging support",
+    "Grid services"
+  ]
+}

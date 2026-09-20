@@ -1,0 +1,48 @@
+{
+  "why": [
+    {
+      "title": "Engineering-led",
+      "desc": "We approach every project as engineers first — partners who value technical rigour will feel at home."
+    },
+    {
+      "title": "Quality & safety",
+      "desc": "We hold ourselves and our partners to high standards of quality and safe working practice."
+    },
+    {
+      "title": "Long-term relationships",
+      "desc": "We prefer dependable, ongoing relationships over one-off transactions."
+    }
+  ],
+  "partnerPoints": [
+    "Technology and product providers",
+    "Suppliers and specialist manufacturers",
+    "Consultancies and engineering firms"
+  ],
+  "contractorPoints": [
+    "Electrical and installation contractors",
+    "Relevant qualifications and accreditation",
+    "Demonstrable safe working practices"
+  ],
+  "steps": [
+    {
+      "n": "01",
+      "title": "Get in touch",
+      "desc": "Introduce your organisation and area of interest through our contact form."
+    },
+    {
+      "n": "02",
+      "title": "Initial review",
+      "desc": "We review your capabilities against current and upcoming needs."
+    },
+    {
+      "n": "03",
+      "title": "Discussion",
+      "desc": "If there is a fit, we arrange a conversation to explore working together."
+    },
+    {
+      "n": "04",
+      "title": "Onboarding",
+      "desc": "We confirm requirements, documentation and how we will collaborate."
+    }
+  ]
+}

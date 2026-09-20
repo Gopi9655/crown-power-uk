@@ -1,0 +1,20 @@
+{
+  "focus": [
+    {
+      "title": "Technical skills",
+      "desc": "Building understanding of power systems, renewable technologies and the tools of modern energy engineering."
+    },
+    {
+      "title": "Health & safety",
+      "desc": "Safe working practices and risk awareness form the foundation of all technical development."
+    },
+    {
+      "title": "Professional skills",
+      "desc": "Communication, teamwork and the professional habits that support a successful engineering career."
+    },
+    {
+      "title": "Systems & technology",
+      "desc": "Familiarity with the digital tools, monitoring and control systems used across the sector."
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "pillars": [
+    {
+      "n": "01",
+      "title": "Quality & Innovation",
+      "desc": "A commitment to engineering quality and modern, future-ready technology."
+    },
+    {
+      "n": "02",
+      "title": "Reliable & Durable",
+      "desc": "Solutions built to perform dependably and stand the test of time."
+    },
+    {
+      "n": "03",
+      "title": "Tailored Solutions",
+      "desc": "Every requirement is unique — we engineer to the specifics of each client."
+    },
+    {
+      "n": "04",
+      "title": "End-to-End Delivery",
+      "desc": "Design, engineering, installation, integration and ongoing maintenance."
+    }
+  ],
+  "mvv": [
+    {
+      "label": "Mission",
+      "text": "To deliver sustainable, smart and reliable energy systems that improve efficiency and support long-term performance."
+    },
+    {
+      "label": "Vision",
+      "text": "A cleaner, more resilient energy future powered by well-engineered renewable and smart infrastructure."
+    },
+    {
+      "label": "Values",
+      "text": "Excellence through innovation, power through reliability — and responsibility to a more sustainable world."
+    }
+  ],
+  "offices": [
+    {
+      "flag": "United Kingdom",
+      "city": "West Midlands",
+      "detail": "Head Office, England, UK. Registered in England & Wales."
+    },
+    {
+      "flag": "Portugal",
+      "city": "Lisbon",
+      "detail": "European branch supporting regional projects."
+    },
+    {
+      "flag": "United Arab Emirates",
+      "city": "Dubai",
+      "detail": "Arab Bank Bldg, Port Saeed, Dubai, UAE."
+    }
+  ],
+  "companyInfo": [
+    {
+      "k": "Company Director",
+      "v": "Mr Aref Mashali"
+    },
+    {
+      "k": "Company Number",
+      "v": "16070400"
+    },
+    {
+      "k": "VAT Registration",
+      "v": "480 0284 11"
+    },
+    {
+      "k": "Registered Office",
+      "v": "Crown Way, Cardiff, CF14 3UZ"
+    },
+    {
+      "k": "Jurisdiction",
+      "v": "England & Wales"
+    },
+    {
+      "k": "Head Office",
+      "v": "West Midlands, UK"
+    }
+  ]
+}

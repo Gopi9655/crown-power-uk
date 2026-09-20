@@ -1,5 +1,10 @@
-import type { ComponentProps } from "react";
-
-export function Container({ className = "", ...props }: ComponentProps<"div">) {
-  return <div className={`container-wide ${className}`} {...props} />;
+import type { ReactNode } from "react";
+export function Container({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return <div className={`site-container ${className}`}>{children}</div>;
 }

@@ -1,144 +1,146 @@
 "use client";
-
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { navigation } from "@/data/site";
 import { Logo } from "./Logo";
-
+import { Modal } from "../ui/Modal";
 export function Header() {
   const pathname = usePathname();
-  const [activeMenu, setActiveMenu] = useState<string | null>(null);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [open, setOpen] = useState<number | null>(null);
+  const [mobile, setMobile] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const mobilePanel = useRef<HTMLDivElement>(null);
-  const closeButton = useRef<HTMLButtonElement>(null);
-  const menuButton = useRef<HTMLButtonElement>(null);
-
+  const header = useRef<HTMLElement>(null);
+  const buttons = useRef<(HTMLButtonElement | null)[]>([]);
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    if (!mobileOpen) return;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    const focusTimer = window.setTimeout(() => closeButton.current?.focus(), 50);
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setMobileOpen(false);
-        requestAnimationFrame(() => menuButton.current?.focus());
-      }
-      if (event.key === "Tab") {
-        const focusable = Array.from(
-          mobilePanel.current?.querySelectorAll<HTMLElement>(
-            'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
-          ) ?? [],
-        ).filter((element) => element.getClientRects().length > 0);
-        const first = focusable[0];
-        const last = focusable.at(-1);
-        if (event.shiftKey && document.activeElement === first) {
-          event.preventDefault();
-          last?.focus();
-        } else if (!event.shiftKey && document.activeElement === last) {
-          event.preventDefault();
-          first?.focus();
-        }
-      }
+    const scroll = () => setScrolled(window.scrollY > 24);
+    scroll();
+    window.addEventListener("scroll", scroll, { passive: true });
+    const outside = (event: PointerEvent) => {
+      if (!header.current?.contains(event.target as Node)) setOpen(null);
     };
-    document.addEventListener("keydown", onKey);
+    document.addEventListener("pointerdown", outside);
+    const resize = () => {
+      if (window.innerWidth >= 1180) setMobile(false);
+      else setOpen(null);
+    };
+    window.addEventListener("resize", resize);
     return () => {
-      document.body.style.overflow = previousOverflow;
-      document.removeEventListener("keydown", onKey);
-      window.clearTimeout(focusTimer);
+      window.removeEventListener("scroll", scroll);
+      document.removeEventListener("pointerdown", outside);
+      window.removeEventListener("resize", resize);
     };
-  }, [mobileOpen]);
-
-  const overlayRoutes = ["/", "/about", "/bess", "/gridtransformer"];
-  const hasImageHero = overlayRoutes.includes(pathname);
-  const solid = !hasImageHero || scrolled || activeMenu !== null || mobileOpen;
-
+  }, []);
+  const close = () => {
+    setOpen(null);
+    setMobile(false);
+  };
   return (
     <header
-      className={`site-header ${solid ? "site-header--solid" : "site-header--overlay"}`}
-      onMouseLeave={() => setActiveMenu(null)}
+      ref={header}
+      className={`site-header ${pathname === "/" && !scrolled && open === null ? "header-overlay" : ""}`}
+      onKeyDown={(event) => {
+        if (event.key === "Escape" && open !== null) {
+          buttons.current[open]?.focus();
+          setOpen(null);
+        }
+      }}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setOpen(null);
+      }}
     >
-      <div className="site-header__bar container-wide">
+      <div className="site-container header-bar">
         <Logo />
-        <nav className="desktop-nav" aria-label="Primary navigation">
-          {navigation.map((group) => {
-            const selected = activeMenu === group.label;
-            const current = group.items.some((item) => pathname === item.href.split("#")[0]);
-            return (
-              <button
-                key={group.label}
-                type="button"
-                className={`desktop-nav__button ${current ? "is-current" : ""}`}
-                aria-expanded={selected}
-                aria-controls="mega-menu"
-                onMouseEnter={() => setActiveMenu(group.label)}
-                onFocus={() => setActiveMenu(group.label)}
-                onClick={() => setActiveMenu(selected ? null : group.label)}
-              >
-                {group.label} <ChevronDown size={14} aria-hidden="true" />
-              </button>
-            );
-          })}
+        <nav className="desktop-nav" aria-label="Main navigation">
+          {navigation.map((menu, i) => (
+            <button
+              key={menu.label}
+              ref={(node) => {
+                buttons.current[i] = node;
+              }}
+              type="button"
+              aria-expanded={open === i}
+              aria-controls={`nav-panel-${i}`}
+              onClick={() => setOpen(open === i ? null : i)}
+            >
+              {menu.label}
+              <span aria-hidden="true">⌄</span>
+            </button>
+          ))}
         </nav>
         <div className="header-actions">
-          <Link href="/contact" className="button button--outline-light button--small">Contact</Link>
-          <Link href="/contact#enquiry" className="button button--gold button--small">Request consultation <span aria-hidden="true">→</span></Link>
+          <Link
+            className="button button-secondary"
+            href="/contact"
+            onClick={close}
+          >
+            Contact
+          </Link>
+          <Link
+            className="button button-primary"
+            href="/contact#enquiry"
+            onClick={close}
+          >
+            Request Consultation →
+          </Link>
         </div>
         <button
-          ref={menuButton}
+          className="icon-button mobile-toggle"
           type="button"
-          className="menu-toggle"
-          aria-label="Open navigation menu"
-          aria-expanded={mobileOpen}
-          onClick={() => setMobileOpen(true)}
+          aria-label="Open navigation"
+          aria-expanded={mobile}
+          onClick={() => setMobile(true)}
         >
-          <Menu size={23} />
+          ☰
         </button>
       </div>
-
-      <div id="mega-menu" className={`mega-menu ${activeMenu ? "is-open" : ""}`} aria-hidden={!activeMenu}>
-        <div className="container-wide mega-menu__inner">
-          <p className="mega-menu__label">{activeMenu}</p>
-          <div className="mega-menu__grid">
-            {navigation.find((group) => group.label === activeMenu)?.items.map((item) => (
-              <Link key={`${item.href}-${item.label}`} href={item.href} className="mega-menu__link" onClick={() => setActiveMenu(null)}>
-                <span>{item.label}</span>
-                <small>{item.description}</small>
-              </Link>
+      {navigation.map((menu, i) => (
+        <div
+          key={menu.label}
+          id={`nav-panel-${i}`}
+          className="mega-menu"
+          hidden={open !== i}
+        >
+          <div className="site-container">
+            <p className="eyebrow">{menu.label}</p>
+            <div className="mega-grid">
+              {menu.items.map((item) => (
+                <Link key={item.label} href={item.href} onClick={close}>
+                  <strong>{item.label}</strong>
+                  <span>{item.desc}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+      {mobile && (
+        <Modal title="Navigation" onClose={close} className="mobile-nav">
+          <Logo />
+          <nav aria-label="Mobile navigation">
+            {navigation.map((menu) => (
+              <details key={menu.label}>
+                <summary>{menu.label}</summary>
+                {menu.items.map((item) => (
+                  <Link key={item.label} href={item.href} onClick={close}>
+                    {item.label}
+                  </Link>
+                ))}
+              </details>
             ))}
-          </div>
-        </div>
-      </div>
-
-      <div ref={mobilePanel} className={`mobile-menu ${mobileOpen ? "is-open" : ""}`} aria-hidden={!mobileOpen}>
-        <div className="mobile-menu__header">
-          <Logo compact />
-          <button ref={closeButton} type="button" className="menu-toggle" aria-label="Close navigation menu" onClick={() => setMobileOpen(false)}>
-            <X size={23} />
-          </button>
-        </div>
-        <nav className="mobile-menu__body" aria-label="Mobile navigation">
-          {navigation.map((group) => (
-            <section key={group.label} className="mobile-menu__section" aria-labelledby={`mobile-${group.label}`}>
-              <h2 id={`mobile-${group.label}`}>{group.label}</h2>
-              {group.items.map((item) => <Link key={`${item.href}-${item.label}`} href={item.href} onClick={() => setMobileOpen(false)}>{item.label}</Link>)}
-            </section>
-          ))}
-          <div className="mobile-menu__actions">
-            <Link href="/contact" className="button button--outline-light" onClick={() => setMobileOpen(false)}>Contact</Link>
-            <Link href="/contact#enquiry" className="button button--gold" onClick={() => setMobileOpen(false)}>Request consultation <span aria-hidden="true">→</span></Link>
-          </div>
-        </nav>
-      </div>
+            <Link href="/contact" onClick={close}>
+              Contact
+            </Link>
+            <Link
+              className="button button-primary"
+              href="/contact#enquiry"
+              onClick={close}
+            >
+              Request Consultation →
+            </Link>
+          </nav>
+        </Modal>
+      )}
     </header>
   );
 }

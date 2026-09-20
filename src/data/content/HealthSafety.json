@@ -1,0 +1,78 @@
+{
+  "reviewNote": "This page sets out Crown Power’s health and safety approach in general terms. Formal policy documents, named responsibilities, procedures and any certifications must be confirmed by the company before publication. We do not claim certification or approval that has not been verified.",
+  "sections": [
+    {
+      "id": "statement",
+      "h": "1. Policy statement",
+      "paras": [
+        "Working with electrical power carries genuine risk. Crown Power is committed to protecting the health, safety and wellbeing of its employees, placement participants, contractors, clients and the public affected by our work.",
+        "Safety is treated as an integral part of every engagement, not a box-ticking exercise."
+      ]
+    },
+    {
+      "id": "scope",
+      "h": "2. Scope",
+      "paras": [
+        "This commitment applies across our activities — from design and installation through to maintenance — and to everyone working on our behalf."
+      ]
+    },
+    {
+      "id": "commitment",
+      "h": "3. Our commitment",
+      "paras": ["We aim to:"],
+      "list": [
+        "Provide a safe working environment and safe systems of work",
+        "Identify hazards and assess and control risks",
+        "Ensure people are competent, informed and appropriately supervised",
+        "Comply with relevant health and safety legislation and good practice",
+        "Continually review and improve our safety performance"
+      ]
+    },
+    {
+      "id": "responsibilities",
+      "h": "4. Responsibilities",
+      "paras": [
+        "Health and safety is a shared responsibility. Management is responsible for providing safe systems of work and resources; everyone working with or for Crown Power is responsible for following safe practices and raising concerns."
+      ]
+    },
+    {
+      "id": "practices",
+      "h": "5. Safe working practices",
+      "paras": [
+        "Our approach includes risk assessment, appropriate use of protective equipment, safe isolation and working procedures, and clear communication on site. Training and safety awareness underpin all technical development."
+      ]
+    },
+    {
+      "id": "reporting",
+      "h": "6. Reporting & escalation",
+      "paras": [
+        "We encourage the prompt reporting of hazards, near misses and incidents so that they can be addressed. Concerns can be raised with management or through the contact route below."
+      ]
+    }
+  ],
+  "related": [
+    {
+      "label": "Training & Development",
+      "href": "/training"
+    },
+    {
+      "label": "About Crown Power",
+      "href": "/about"
+    },
+    {
+      "label": "Legal Department",
+      "href": "/legal"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  ],
+  "title": "Health & Safety",
+  "summary": "Safe working practice is fundamental to how Crown Power operates in the electrical power industry.",
+  "eyebrow": "Company",
+  "updated": "Last reviewed 2025 · policy detail to be confirmed",
+  "contactHeading": "Health & safety enquiries",
+  "contactNote": "For questions relating to our health and safety practices, please contact us.",
+  "contactEmail": "info@crownpoweruk.co.uk"
+}

@@ -1,0 +1,58 @@
+{
+  "chemistries": [
+    {
+      "type": "Alkaline",
+      "title": "Everyday power",
+      "desc": "The common single-use cell. Reliable, widely available and good at holding charge in storage.",
+      "uses": "Remotes, clocks, torches, toys"
+    },
+    {
+      "type": "NiMH",
+      "title": "Rechargeable workhorse",
+      "desc": "Nickel-metal hydride cells can be recharged hundreds of times and suit regularly used devices.",
+      "uses": "Cameras, controllers, household devices"
+    },
+    {
+      "type": "Lithium-ion",
+      "title": "High energy density",
+      "desc": "Lightweight, high-capacity and rechargeable — the technology behind most modern electronics and larger storage systems.",
+      "uses": "Laptops, phones, power tools, BESS"
+    }
+  ],
+  "sizes": [
+    {
+      "size": "AA",
+      "use": "The most common size — torches, remotes, toys, wireless peripherals and countless everyday devices."
+    },
+    {
+      "size": "AAA",
+      "use": "Smaller devices where space is limited — slim remotes, small torches and electronic accessories."
+    },
+    {
+      "size": "C",
+      "use": "Medium-drain devices needing more capacity, such as larger torches and portable radios."
+    },
+    {
+      "size": "D",
+      "use": "High-drain, longer-running devices such as large flashlights and some industrial equipment."
+    },
+    {
+      "size": "9V",
+      "use": "Smoke alarms, detectors and specialist electronic equipment requiring a higher voltage."
+    }
+  ],
+  "recycle": [
+    {
+      "title": "Keep out of general waste",
+      "desc": "Batteries should never go in your normal bin — many retailers and recycling points accept them free of charge."
+    },
+    {
+      "title": "Store safely before recycling",
+      "desc": "Keep used batteries dry and, for lithium cells, tape the terminals to prevent short circuits before disposal."
+    },
+    {
+      "title": "Recover valuable materials",
+      "desc": "Recycling recovers metals and reduces the environmental impact of battery production and disposal."
+    }
+  ]
+}
