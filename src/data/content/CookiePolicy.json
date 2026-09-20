@@ -1,0 +1,72 @@
+{
+  "reviewNote": "The cookie categories below describe how consent will work on the redesigned website. Only cookies that the final site actually uses should be enabled in production — the specific cookies, providers and durations must be confirmed before publication.",
+  "sections": [
+    {
+      "id": "what",
+      "h": "1. What are cookies?",
+      "paras": [
+        "Cookies are small text files placed on your device when you visit a website. They are widely used to make websites work, to improve your experience and to provide information to site owners.",
+        "Similar technologies such as local storage may be used for the same purposes; where we refer to \"cookies\" we mean these technologies too."
+      ]
+    },
+    {
+      "id": "use",
+      "h": "2. How we use cookies",
+      "paras": [
+        "We use cookies to keep the site working correctly and, where you agree, to understand how the site is used so we can improve it. You are always in control of optional cookies."
+      ]
+    },
+    {
+      "id": "categories",
+      "h": "3. Cookie categories",
+      "paras": [
+        "We group cookies into the following categories. You can accept or reject the optional categories at any time."
+      ],
+      "list": [
+        "Strictly necessary — required for the site to function; these cannot be switched off",
+        "Analytics — help us understand how visitors use the site so we can improve it",
+        "Functional — remember your choices and preferences",
+        "Marketing — used to measure and support relevant communications"
+      ]
+    },
+    {
+      "id": "manage",
+      "h": "4. Managing your choices",
+      "paras": [
+        "You can change your preferences at any time using the \"Cookie Settings\" control in the site footer. You can also control cookies through your browser settings, although disabling strictly necessary cookies may affect how the site works."
+      ]
+    },
+    {
+      "id": "changes",
+      "h": "5. Changes to this policy",
+      "paras": [
+        "We may update this cookie policy from time to time. Any changes will be published on this page with an updated review date."
+      ]
+    }
+  ],
+  "related": [
+    {
+      "label": "Privacy Policy",
+      "href": "/privacy"
+    },
+    {
+      "label": "Terms & Conditions",
+      "href": "/terms"
+    },
+    {
+      "label": "Accessibility",
+      "href": "/accessibility"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  ],
+  "title": "Cookie Policy",
+  "summary": "How and why Crown Power uses cookies and similar technologies on this website.",
+  "eyebrow": "Legal",
+  "updated": "Last reviewed 2025 · pending final confirmation of live cookies",
+  "contactHeading": "Cookie enquiries",
+  "contactNote": "For questions about cookies or your choices on this site, contact us.",
+  "contactEmail": "info@crownpoweruk.co.uk"
+}

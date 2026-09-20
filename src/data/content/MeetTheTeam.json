@@ -1,0 +1,286 @@
+[
+  {
+    "name": "Mr Aref Mashali",
+    "role": "Company Director & Electrical Power Systems Engineer",
+    "cat": "Leadership",
+    "id": "f1cbb5_2b7da00fca9d40b1bf517848ef8c67ca",
+    "ext": "png",
+    "email": "arefm@crownpoweruk.co.uk",
+    "bio": "Leads as Company Director while applying deep expertise in Electrical Power Systems Engineering across Crown Power’s renewable and industrial projects.",
+    "image": "/images/team/mr-aref-mashali.png"
+  },
+  {
+    "name": "Ms Iara Oliveira",
+    "role": "Company Secretary",
+    "cat": "Leadership",
+    "id": "f1cbb5_47dacefc571447d28d38b5fbd9c6fab7",
+    "ext": "jpg",
+    "email": "experience@crownpoweruk.co.uk",
+    "bio": "Company Secretary managing corporate governance and ensuring efficient administrative operations and organisational compliance.",
+    "image": "/images/team/ms-iara-oliveira.jpg"
+  },
+  {
+    "name": "Ms Alessandra Russo",
+    "role": "Company Financial Advisor",
+    "cat": "Business",
+    "id": "f1cbb5_28782955ac434450828e567f3c8797fc",
+    "ext": "jpg",
+    "email": "info@crownpoweruk.co.uk",
+    "bio": "Provides strategic financial guidance and manages monetary decisions to optimise business performance.",
+    "image": "/images/team/ms-alessandra-russo.jpg"
+  },
+  {
+    "name": "Ms Emily Edwards",
+    "role": "Business Law Expert",
+    "cat": "Legal",
+    "id": "f1cbb5_47b694ed883c48898857338d41985369",
+    "ext": "jpg",
+    "email": "attorneys@crownpoweruk-legals.co.uk",
+    "bio": "Specialises in corporate legal frameworks and regulatory compliance — commercial contracts, corporate governance and business regulations — helping the organisation navigate complex legal landscapes while protecting its commercial interests.",
+    "image": "/images/team/ms-emily-edwards.jpg"
+  },
+  {
+    "name": "Ms Aimee Chen",
+    "role": "Collaboration & Client Relations",
+    "cat": "Business",
+    "id": "f1cbb5_82169675e74e4eb48544f4245210fe82",
+    "ext": "jpg",
+    "email": "client@crownpoweruk.co.uk",
+    "bio": "Brings extensive international experience in collaboration and client relations, fostering strategic partnerships and managing global client relationships across diverse markets.",
+    "image": "/images/team/ms-aimee-chen.jpg"
+  },
+  {
+    "name": "Ms Maryam Noorzadeh",
+    "role": "Events Manager & Art Designer",
+    "cat": "Business",
+    "id": "f1cbb5_db2e7351d00146f0a1119420c789c546",
+    "ext": "jpg",
+    "bio": "Art designer and events manager, combining creative expertise with event planning to deliver exceptional experiences.",
+    "image": "/images/team/ms-maryam-noorzadeh.jpg"
+  },
+  {
+    "name": "Mr Abdussamad Asjid Saleem",
+    "role": "Computer Hardware & Software Engineering",
+    "cat": "Technology",
+    "id": "f1cbb5_f65e1ec6e8af418bb2360f61a4ac4ef1",
+    "ext": "jpg",
+    "bio": "Combines in-depth knowledge of hardware architecture with advanced software development, delivering integrated computing solutions spanning system architecture, hardware-software integration and optimisation.",
+    "image": "/images/team/mr-abdussamad-asjid-saleem.jpg"
+  },
+  {
+    "name": "Mr Murtadha Alkinani",
+    "role": "PhD Researcher & Mechanical Engineer",
+    "cat": "Engineering",
+    "id": "f1cbb5_ee48312a865a4b0db5f8b54a48f06f99",
+    "ext": "jpg",
+    "bio": "Bridges academic research and practical engineering — mechanical system design, thermal dynamics and advanced manufacturing — contributing to both academic knowledge and industrial innovation.",
+    "image": "/images/team/mr-murtadha-alkinani.jpg"
+  },
+  {
+    "name": "Ms Niloufar Javdani Bafarasat",
+    "role": "Business & Market Intelligence (MSc)",
+    "cat": "Business",
+    "id": "f1cbb5_b51054bb73c9419c9e9d1e3f402c3b06",
+    "ext": "jpg",
+    "bio": "Business & Market Intelligence specialist leveraging strategic analysis and data-driven decision-making, integrating emerging technologies including AI into business development strategies.",
+    "image": "/images/team/ms-niloufar-javdani-bafarasat.jpg"
+  },
+  {
+    "name": "Mr Evan Murphy",
+    "role": "Electrical & Construction Engineer",
+    "cat": "Engineering",
+    "id": "f1cbb5_55965a9efe49498fa0798c24e0cd9825",
+    "ext": "jpg",
+    "bio": "Oversees electrical system installations and manages power infrastructure projects.",
+    "image": "/images/team/mr-evan-murphy.jpg"
+  },
+  {
+    "name": "Mr Rahim Modhej",
+    "role": "Electrical Power Systems Engineer",
+    "cat": "Engineering",
+    "id": "f1cbb5_039d1a1c270941fd8b9025a45a0e1bc3",
+    "ext": "jpg",
+    "bio": "Electrical power engineer specialising in renewable energy systems, dedicated to sustainable power solutions and collaborative innovation for a greener future.",
+    "image": "/images/team/mr-rahim-modhej.jpg"
+  },
+  {
+    "name": "Ms Sheida Hooshmandi",
+    "role": "PhD Sustainability Strategy & Transformation",
+    "cat": "Sustainability",
+    "id": "f1cbb5_1802bf506dc149d6b699739e856c469b",
+    "ext": "jpg",
+    "bio": "Guides sustainability transformations by developing tailored ESG strategies, leading change management, implementing sustainability metrics and advising on regulatory compliance and reporting frameworks.",
+    "image": "/images/team/ms-sheida-hooshmandi.jpg"
+  },
+  {
+    "name": "Mr Amirmohammad Sadeghi",
+    "role": "IT Engineer",
+    "cat": "Technology",
+    "id": "f1cbb5_728c338872084908bf8d4e38eb44c7e4",
+    "ext": "jpg",
+    "bio": "Implements technical solutions and maintains digital infrastructure to ensure optimal system performance.",
+    "image": "/images/team/mr-amirmohammad-sadeghi.jpg"
+  },
+  {
+    "name": "Ms Shabnam Asadzadeh",
+    "role": "International Business Management (MSc)",
+    "cat": "Business",
+    "id": "f1cbb5_79e54bd1bd8143399bbdc04b39568499",
+    "ext": "jpg",
+    "bio": "Focuses on cross-cultural leadership and global market strategies, helping the organisation navigate multinational operations and develop effective cross-border partnerships.",
+    "image": "/images/team/ms-shabnam-asadzadeh.jpg"
+  },
+  {
+    "name": "Mr Lucas Schmit",
+    "role": "Materials Engineer",
+    "cat": "Engineering",
+    "id": "f1cbb5_2762d8d006964b70993a7350801c0614",
+    "ext": "jpg",
+    "bio": "Develops, tests and processes materials — metals, ceramics, plastics, composites and semiconductors — to meet engineering, chemical and electrical standards.",
+    "image": "/images/team/mr-lucas-schmit.jpg"
+  },
+  {
+    "name": "Ms Ella Jones",
+    "role": "IT Engineering Expert",
+    "cat": "Technology",
+    "id": "f1cbb5_db00783641ee4b4fbd9d43a8c2dc3311",
+    "ext": "jpg",
+    "bio": "Develops innovative technological solutions across software development, system architecture and network infrastructure while maintaining robust security and performance.",
+    "image": "/images/team/ms-ella-jones.jpg"
+  },
+  {
+    "name": "Ms Devon Stevens",
+    "role": "Computer Science & Engineering",
+    "cat": "Technology",
+    "id": "f1cbb5_94f90add293c437e84b7639369698d5d",
+    "ext": "jpg",
+    "bio": "Combines theoretical knowledge with practical applications across software development, systems architecture and advanced computing technologies.",
+    "image": "/images/team/ms-devon-stevens.jpg"
+  },
+  {
+    "name": "Ms Shaista",
+    "role": "Sustainability & Environmental Management · H&S Officer",
+    "cat": "Sustainability",
+    "id": "f1cbb5_e7d73c68eb2649b68bd3332d0e94f17d",
+    "ext": "jpg",
+    "bio": "Health & Safety Officer specialising in sustainability and environmental management — resource management, environmental impact assessment and sustainable development practices.",
+    "image": "/images/team/ms-shaista.jpg"
+  },
+  {
+    "name": "Mr Saadeldin Ali",
+    "role": "Electrical Power Systems Engineer",
+    "cat": "Engineering",
+    "id": "f1cbb5_cf62e77646b146aeabe1f4ffd0778995",
+    "ext": "jpg",
+    "bio": "Electrical power engineer specialising in renewable energy systems, dedicated to sustainable power solutions and collaborative innovation for a greener future.",
+    "image": "/images/team/mr-saadeldin-ali.jpg"
+  },
+  {
+    "name": "Mr Osman Mohammad",
+    "role": "Electrical Power Systems Engineer",
+    "cat": "Engineering",
+    "id": "f1cbb5_9702cbeded3b4c4ca93bbe99cd8fc9fc",
+    "ext": "jpg",
+    "bio": "Electrical power engineer specialising in renewable energy systems, dedicated to sustainable power solutions and collaborative innovation for a greener future.",
+    "image": "/images/team/mr-osman-mohammad.jpg"
+  },
+  {
+    "name": "Ms Xiaoxiao Li",
+    "role": "Engineering Management (MSc)",
+    "cat": "Business",
+    "id": "f1cbb5_b0408783c80c40189bed0360a0b641e5",
+    "ext": "jpg",
+    "bio": "Combines business and engineering expertise — marketing, organisational management, accounting and project management — to manage engineering projects and teams effectively.",
+    "image": "/images/team/ms-xiaoxiao-li.jpg"
+  },
+  {
+    "name": "Ms Raian Mohamed khair",
+    "role": "Electrical & Electronic Engineering",
+    "cat": "Engineering",
+    "id": "f1cbb5_b76b4d1083fe4a08aeb5479405a11309",
+    "ext": "jpg",
+    "bio": "Focuses on electrical systems and electronic devices — circuit design, signal processing, power systems and telecommunications — developing practical solutions for modern technological challenges.",
+    "image": "/images/team/ms-raian-mohamed-khair.jpg"
+  },
+  {
+    "name": "Mr Jianming Wang",
+    "role": "Artificial Intelligence (MSc)",
+    "cat": "Technology",
+    "id": "f1cbb5_cf55ffc2fa3e4e409adab3f90c0a087e",
+    "ext": "jpg",
+    "bio": "Specialises in AI — machine learning, neural networks and data analytics — creating intelligent systems that process complex information, recognise patterns and support decision-making.",
+    "image": "/images/team/mr-jianming-wang.jpg"
+  },
+  {
+    "name": "Ms Andreia Lopes Da Silvia",
+    "role": "Business Management & HR",
+    "cat": "Business",
+    "id": "f1cbb5_5bc34407f3694432a657402aaba2ff82",
+    "ext": "jpg",
+    "bio": "Specialises in business management and human resources, aligning human capital with organisational objectives across strategic and operational HR.",
+    "image": "/images/team/ms-andreia-lopes-da-silvia.jpg"
+  },
+  {
+    "name": "Mr Ragavan Rajkumar",
+    "role": "Automotive Engineering (MSc)",
+    "cat": "Engineering",
+    "id": "f1cbb5_38c906b191054c7a933c605d58574671",
+    "ext": "jpg",
+    "bio": "MSc in Automotive Engineering with expertise in powertrain efficiency and vehicle dynamics, spanning both combustion engines and emerging electric vehicle systems.",
+    "image": "/images/team/mr-ragavan-rajkumar.jpg"
+  },
+  {
+    "name": "Mr Bartek Kowalczyk",
+    "role": "Automotive Engineering (MSc)",
+    "cat": "Engineering",
+    "id": "f1cbb5_9f088de096ad4fff8201c627f93d3081",
+    "ext": "jpg",
+    "bio": "Automotive engineering professional with an MSc, bringing advanced knowledge of vehicle design, performance optimisation and sustainable transportation solutions.",
+    "image": "/images/team/mr-bartek-kowalczyk.jpg"
+  },
+  {
+    "name": "Ms Jingting Jiao",
+    "role": "Electrical Power Systems Engineer",
+    "cat": "Engineering",
+    "id": "f1cbb5_2015b25c30784d018101da9a4b4640a0",
+    "ext": "jpg",
+    "bio": "Electrical power engineer specialising in renewable energy systems, dedicated to sustainable power solutions and collaborative innovation for a greener future.",
+    "image": "/images/team/ms-jingting-jiao.jpg"
+  },
+  {
+    "name": "Mr Rudra Krishna",
+    "role": "Electrical & Electronics Engineer (MSc)",
+    "cat": "Engineering",
+    "id": "f1cbb5_26109cddb24749d7b6145f619e4a4e06",
+    "ext": "jpg",
+    "bio": "Expertise in MATLAB, Simulink and Simscape; skilled in transformer sizing, cable and circuit-breaker selection, panel load calculations, control systems, electrical machines and power electronics.",
+    "image": "/images/team/mr-rudra-krishna.jpg"
+  },
+  {
+    "name": "Mr Yiyu Ding",
+    "role": "Electrical Power System Engineering (MSc)",
+    "cat": "Engineering",
+    "id": "f1cbb5_005b986d5be5424a82e6d8d77a2f7ecc",
+    "ext": "jpg",
+    "bio": "Electrical power engineer specialising in renewable energy systems, dedicated to sustainable power solutions and collaborative innovation for a greener future.",
+    "image": "/images/team/mr-yiyu-ding.jpg"
+  },
+  {
+    "name": "Mr Demir Denise",
+    "role": "PhD Digital Pedagogy",
+    "cat": "Technology",
+    "id": "f1cbb5_af2d1f1d90b04deb8c7106c33507a4e8",
+    "ext": "jpg",
+    "bio": "Education professional specialising in digital pedagogy and innovative teaching methods, integrating AI technologies and authentic assessment into learning frameworks.",
+    "image": "/images/team/mr-demir-denise.jpg"
+  },
+  {
+    "name": "Ms Shereen Zaher Ibrahim Elmaghraby",
+    "role": "Human Resources Specialist",
+    "cat": "Business",
+    "id": "f1cbb5_fc4311d3e1db40719a9a99ccdb1cd964",
+    "ext": "jpg",
+    "bio": "HR specialist with hands-on experience in recruitment and talent acquisition, personnel affairs, employee records, onboarding/offboarding and HR reporting, with strong interpersonal and organisational skills.",
+    "image": "/images/team/ms-shereen-zaher-ibrahim-elmaghraby.jpg"
+  }
+]

@@ -1,0 +1,39 @@
+[
+  {
+    "category": "Company",
+    "date": "11 May 2025",
+    "title": "Internships and Work Experience",
+    "lead": "Crown Power opens internship and work-experience placements for students and early-career candidates across engineering, energy, business and more.",
+    "body": [
+      "Our placements are designed to give participants a genuine insight into how a modern energy-engineering business operates, spanning multiple disciplines.",
+      "Terms are confirmed on an individual basis. See the Internships page for programme details and how to apply."
+    ]
+  },
+  {
+    "category": "Innovation",
+    "date": "26 February 2025",
+    "title": "Smart Cat's Eyes Road Sign System with AI Integration",
+    "lead": "A perspective on intelligent road-marking and sign systems that combine visibility technology with AI-driven awareness.",
+    "body": [
+      "This statement explores how established road-safety concepts could be enhanced with sensing and intelligent integration."
+    ]
+  },
+  {
+    "category": "Engineering",
+    "date": "17 February 2025",
+    "title": "Transforming Energy Infrastructure through AI-Powered Electrical Engineering",
+    "lead": "How artificial intelligence and data can support the design, monitoring and optimisation of electrical infrastructure.",
+    "body": [
+      "A look at the role intelligent systems can play across the lifecycle of energy infrastructure, from design through to operation."
+    ]
+  },
+  {
+    "category": "Engineering",
+    "date": "16 February 2025",
+    "title": "Pioneering the Future of Energy: AI-Powered Electrical Engineering",
+    "lead": "Crown Power sets out its interest in combining electrical engineering expertise with modern, data-driven tools.",
+    "body": [
+      "An introduction to the thinking behind Crown Power’s approach to smart, sustainable and reliable energy systems."
+    ]
+  }
+]

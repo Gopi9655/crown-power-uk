@@ -1,0 +1,146 @@
+{
+  "categories": [
+    {
+      "id": "renewable",
+      "flip": "0",
+      "n": "01",
+      "title": "Renewable Integration",
+      "blurb": "Bringing renewable and hybrid generation onto reliable, well-engineered systems.",
+      "img": "/images/services/renewable-integration.jpg",
+      "items": [
+        "Solar Power Integration",
+        "Wind Energy Systems",
+        "Battery Energy Storage Systems",
+        "Hybrid Power Systems",
+        "Microgrid Solutions",
+        "Green Energy Projects"
+      ]
+    },
+    {
+      "id": "smart",
+      "flip": "1",
+      "n": "02",
+      "title": "Smart Energy Technologies",
+      "blurb": "Intelligent control and visibility across generation, storage and demand.",
+      "img": "/images/services/smart-energy-technologies.jpg",
+      "items": [
+        "Smart Grid Solutions",
+        "Energy Management Systems",
+        "Power Monitoring Systems",
+        "Automation Technologies",
+        "Remote Monitoring",
+        "SCADA Systems"
+      ]
+    },
+    {
+      "id": "power",
+      "flip": "0",
+      "n": "03",
+      "title": "Power Systems Solutions",
+      "blurb": "Robust grid infrastructure, distribution and protection built to standard.",
+      "img": "/images/services/power-systems.jpg",
+      "items": [
+        "Grid Infrastructure Design",
+        "Power Distribution Systems",
+        "Substation Installation",
+        "Network Upgrades",
+        "Switchgear Systems",
+        "Control & Protection Systems"
+      ]
+    },
+    {
+      "id": "industrial",
+      "flip": "1",
+      "n": "04",
+      "title": "Industrial & Commercial Services",
+      "blurb": "Dependable power for factories, buildings, data centres and critical facilities.",
+      "img": "/images/services/industrial-commercial.jpg",
+      "items": [
+        "Industrial Power Systems",
+        "Factory Installations",
+        "Commercial Buildings",
+        "Data Centre Power",
+        "Emergency Power Systems",
+        "UPS Systems"
+      ]
+    },
+    {
+      "id": "specialised",
+      "flip": "0",
+      "n": "05",
+      "title": "Specialised Services",
+      "blurb": "Expert analysis, maintenance and consulting to keep systems performing.",
+      "img": "/images/services/specialised-services.jpg",
+      "items": [
+        "Power Quality Analysis",
+        "Energy Efficiency Audits",
+        "Preventive Maintenance",
+        "Emergency Response",
+        "System Upgrades",
+        "Technical Consulting"
+      ]
+    }
+  ],
+  "sectors": [
+    {
+      "title": "Industrial",
+      "items": [
+        "Manufacturing Plants",
+        "Processing Facilities",
+        "Warehouses",
+        "Industrial Parks"
+      ]
+    },
+    {
+      "title": "Commercial",
+      "items": [
+        "Office Buildings",
+        "Shopping Centres",
+        "Hotels",
+        "Business Parks"
+      ]
+    },
+    {
+      "title": "Infrastructure",
+      "items": [
+        "Data Centres",
+        "Telecommunications",
+        "Transport Facilities",
+        "Utilities"
+      ]
+    },
+    {
+      "title": "Agricultural",
+      "items": [
+        "Farms & Livestock",
+        "Greenhouses",
+        "Cold Storage",
+        "Irrigation Systems",
+        "Feed Mills",
+        "Aquaculture"
+      ]
+    }
+  ],
+  "liveData": [
+    {
+      "title": "UK Renewable Energy Map",
+      "href": "https://www.mygridgb.co.uk/map/"
+    },
+    {
+      "title": "GB Electricity Mix — Live",
+      "href": "https://infogram.com/live-dashboard-gb-electricity-mix-1h0n25ze0vjz2pe"
+    },
+    {
+      "title": "National Grid: Live",
+      "href": "https://grid.iamkate.com/"
+    },
+    {
+      "title": "Energy Dashboard",
+      "href": "https://www.energydashboard.co.uk/live"
+    },
+    {
+      "title": "Europe Electricity Maps",
+      "href": "https://app.electricitymaps.com/map/72h/hourly"
+    }
+  ]
+}

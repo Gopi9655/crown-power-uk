@@ -1,0 +1,71 @@
+{
+  "reviewNote": "Any accessibility instructions carried over from the previous website that referred to older browser behaviour no longer apply to this redesigned site and have been set aside for revision. This statement describes the accessibility approach of the new website.",
+  "sections": [
+    {
+      "id": "commitment",
+      "h": "1. Our commitment",
+      "paras": [
+        "Crown Power is committed to making its website accessible to as many people as possible, regardless of ability or the technology they use. We treat accessibility as part of good design, not an afterthought."
+      ]
+    },
+    {
+      "id": "standard",
+      "h": "2. Standard we aim for",
+      "paras": [
+        "The redesigned website is built with the Web Content Accessibility Guidelines (WCAG) 2.2 Level AA as its target. We consider accessibility throughout design and development rather than at the end."
+      ]
+    },
+    {
+      "id": "features",
+      "h": "3. What we do",
+      "paras": ["Accessibility features built into the site include:"],
+      "list": [
+        "Clear, consistent navigation and page structure",
+        "Text and interface colours chosen to meet contrast guidance",
+        "Full keyboard operability with visible focus states",
+        "Support for the \"reduced motion\" setting so animation can be minimised",
+        "Readable text sizes and layouts that adapt to zoom and smaller screens",
+        "Meaningful text alternatives for images that carry information"
+      ]
+    },
+    {
+      "id": "limitations",
+      "h": "4. Known limitations",
+      "paras": [
+        "We continue to test and improve the site. Some third-party content or embedded material may not yet fully meet our target standard; where we identify issues, we work to address them."
+      ]
+    },
+    {
+      "id": "feedback",
+      "h": "5. Feedback",
+      "paras": [
+        "We welcome feedback on the accessibility of this website. If something is difficult to use, or you need content in another format, please contact us using the details below."
+      ]
+    }
+  ],
+  "related": [
+    {
+      "label": "Privacy Policy",
+      "href": "/privacy"
+    },
+    {
+      "label": "Cookie Policy",
+      "href": "/cookies"
+    },
+    {
+      "label": "Terms & Conditions",
+      "href": "/terms"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  ],
+  "title": "Accessibility",
+  "summary": "Our commitment to making this website usable for as many people as possible.",
+  "eyebrow": "Legal",
+  "updated": "Last reviewed 2025",
+  "contactHeading": "Accessibility feedback",
+  "contactNote": "If you experience any difficulty using this site, or need information in an alternative format, please tell us and we will do our best to help.",
+  "contactEmail": "info@crownpoweruk.co.uk"
+}

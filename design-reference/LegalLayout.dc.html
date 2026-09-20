@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  .lg-sec{scroll-margin-top:100px;}
+  #lg-grid{display:grid;gap:clamp(28px,4vw,56px);grid-template-columns:1fr;}
+  @media (max-width:899px){ #lg-toc-d{display:none;} }
+  @media (min-width:900px){ #lg-toc-m{display:none;} #lg-grid{grid-template-columns:250px minmax(0,1fr);} }
+</style>
+</helmet>
+<div style="font-family:Inter,sans-serif;color:#0C1722;background:#fff;">
+  <!-- HEADER BLOCK -->
+  <section style="background:#F6F8FA;border-bottom:1px solid #E6EBF0;padding:clamp(96px,11vw,132px) 0 clamp(36px,5vw,56px);">
+    <div style="max-width:1100px;margin:0 auto;padding:0 clamp(20px,5vw,40px);">
+      <nav style="font-size:13px;color:#8A98A6;margin-bottom:22px;"><a href="Home.dc.html" style="color:#8A98A6;">Home</a> <span style="color:#C7CFD8;">/</span> <span style="color:#43525F;">{{ eyebrow }}</span> <span style="color:#C7CFD8;">/</span> <span style="color:#0C1722;font-weight:600;">{{ title }}</span></nav>
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.22em;color:#176BFF;text-transform:uppercase;margin-bottom:16px;">{{ eyebrow }}</div>
+      <h1 style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(30px,4vw,48px);line-height:1.08;letter-spacing:-0.02em;color:#0C1722;margin:0 0 18px;max-width:760px;text-wrap:balance;">{{ title }}</h1>
+      <p style="font-size:clamp(16px,1.6vw,19px);line-height:1.6;color:#43525F;max-width:640px;margin:0 0 20px;">{{ summary }}</p>
+      <div style="font-size:13px;color:#8A98A6;">{{ updated }}</div>
+    </div>
+  </section>
+
+  <!-- BODY -->
+  <section style="padding:clamp(40px,6vw,72px) 0 clamp(56px,8vw,100px);">
+    <div id="lg-grid" style="max-width:1100px;margin:0 auto;padding:0 clamp(20px,5vw,40px);">
+      <!-- DESKTOP TOC -->
+      <aside id="lg-toc-d" style="align-self:start;position:sticky;top:100px;">
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8A98A6;margin-bottom:14px;">On this page</div>
+        <nav style="display:flex;flex-direction:column;gap:2px;border-left:1px solid #E4E9EF;">
+          <sc-for list="{{ sections }}" as="s" hint-placeholder-count="5">
+            <a href="#{{ s.id }}" style="font-size:14px;color:#5A6875;padding:7px 0 7px 16px;margin-left:-1px;border-left:2px solid transparent;transition:color .15s,border-color .15s;" style-hover="color:#176BFF;border-left-color:#176BFF;">{{ s.h }}</a>
+          </sc-for>
+        </nav>
+      </aside>
+
+      <!-- ARTICLE -->
+      <div style="min-width:0;max-width:760px;">
+        <!-- MOBILE TOC -->
+        <details id="lg-toc-m" style="border:1px solid #E4E9EF;border-radius:12px;padding:4px 18px;margin-bottom:32px;background:#FBFCFE;">
+          <summary style="font-family:Manrope,sans-serif;font-weight:700;font-size:14px;color:#0C1722;padding:14px 0;cursor:pointer;list-style:none;">Contents</summary>
+          <nav style="display:flex;flex-direction:column;gap:2px;padding:0 0 14px;">
+            <sc-for list="{{ sections }}" as="s" hint-placeholder-count="5">
+              <a href="#{{ s.id }}" style="font-size:14.5px;color:#176BFF;padding:8px 0;">{{ s.h }}</a>
+            </sc-for>
+          </nav>
+        </details>
+
+        <!-- REVIEW FLAG -->
+        <sc-if value="{{ reviewNote }}" hint-placeholder-val="{{ false }}">
+          <div style="border:1px dashed #C7CFD8;border-radius:12px;padding:20px 22px;background:#FBFCFE;margin-bottom:34px;">
+            <div style="display:inline-flex;align-items:center;gap:8px;font-family:Manrope,sans-serif;font-weight:700;font-size:11px;letter-spacing:0.12em;color:#9A6A00;text-transform:uppercase;margin-bottom:8px;"><span style="width:8px;height:8px;border-radius:50%;background:#D9A81A;"></span>Legal / company review required</div>
+            <p style="font-size:14px;line-height:1.65;color:#5A6875;margin:0;">{{ reviewNote }}</p>
+          </div>
+        </sc-if>
+
+        <!-- SECTIONS -->
+        <sc-for list="{{ sections }}" as="s" hint-placeholder-count="5">
+          <section id="{{ s.id }}" class="lg-sec" style="margin-bottom:38px;">
+            <h2 style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(20px,2.4vw,26px);line-height:1.2;letter-spacing:-0.01em;color:#0C1722;margin:0 0 16px;">{{ s.h }}</h2>
+            <sc-for list="{{ s.paras }}" as="p" hint-placeholder-count="2">
+              <p style="font-size:16.5px;line-height:1.8;color:#43525F;margin:0 0 16px;">{{ p }}</p>
+            </sc-for>
+            <sc-if value="{{ s.list }}" hint-placeholder-val="{{ false }}">
+              <ul style="margin:0 0 16px;padding:0;list-style:none;display:flex;flex-direction:column;gap:11px;">
+                <sc-for list="{{ s.list }}" as="li" hint-placeholder-count="3">
+                  <li style="display:flex;gap:12px;font-size:16px;line-height:1.65;color:#43525F;"><span style="color:#D9A81A;flex:none;margin-top:2px;font-size:13px;">◆</span><span style="min-width:0;">{{ li }}</span></li>
+                </sc-for>
+              </ul>
+            </sc-if>
+          </section>
+        </sc-for>
+
+        <!-- CONTACT / ESCALATION -->
+        <div style="border:1px solid #E4E9EF;border-left:4px solid #176BFF;border-radius:12px;padding:26px 28px;background:#FBFCFE;margin-top:40px;">
+          <h3 style="font-family:Manrope,sans-serif;font-weight:700;font-size:17px;margin:0 0 8px;color:#0C1722;">{{ contactHeading }}</h3>
+          <p style="font-size:15px;line-height:1.7;color:#5A6875;margin:0 0 12px;">{{ contactNote }}</p>
+          <a href="mailto:{{ contactEmail }}" style="font-size:15px;font-weight:600;color:#176BFF;">{{ contactEmail }}</a>
+        </div>
+
+        <!-- RELATED -->
+        <div style="margin-top:44px;border-top:1px solid #E4E9EF;padding-top:28px;">
+          <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8A98A6;margin-bottom:16px;">Related</div>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;">
+            <sc-for list="{{ related }}" as="r" hint-placeholder-count="4">
+              <a href="{{ r.href }}" style="font-size:14px;font-weight:600;color:#0B2E6B;border:1px solid #E4E9EF;border-radius:100px;padding:9px 18px;transition:border-color .15s,background .15s;" style-hover="border-color:#176BFF;background:#F2F6FF;">{{ r.label }}</a>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1100,&quot;height&quot;:900},&quot;eyebrow&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Legal&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;title&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Policy title&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;summary&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;updated&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;reviewNote&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;contactHeading&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Questions about this page?&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;contactNote&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;contactEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;info@crownpoweruk.co.uk&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;sections&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;Array&lt;{id:string;h:string;paras:string[];list?:string[]}&gt;&quot;},&quot;related&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;Array&lt;{label:string;href:string}&gt;&quot;}}"></script>
+</body>
+</html>

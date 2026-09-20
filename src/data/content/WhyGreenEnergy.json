@@ -1,0 +1,69 @@
+{
+  "benefits": [
+    {
+      "title": "Environmental sustainability",
+      "desc": "Renewable generation and storage can reduce reliance on fossil fuels and lower carbon emissions associated with your operations."
+    },
+    {
+      "title": "Financial efficiency",
+      "desc": "Depending on tariffs, usage and site conditions, on-site generation and storage may reduce exposure to volatile energy prices over time."
+    },
+    {
+      "title": "Energy independence",
+      "desc": "Combining generation, storage and smart control can improve resilience and reduce dependence on imported grid power at peak times."
+    },
+    {
+      "title": "Planning & conservation",
+      "desc": "Efficiency measures and intelligent energy management help conserve resources and make the most of every kilowatt-hour."
+    }
+  ],
+  "tech": [
+    {
+      "tag": "Generate",
+      "title": "Solar & wind",
+      "desc": "On-site solar PV and wind generation, sized and sited to match your demand profile."
+    },
+    {
+      "tag": "Store",
+      "title": "Battery storage",
+      "desc": "BESS captures surplus energy and releases it when it is most valuable or when supply is constrained."
+    },
+    {
+      "tag": "Control",
+      "title": "Smart energy management",
+      "desc": "Monitoring, automation and SCADA coordinate generation, storage and loads in real time."
+    },
+    {
+      "tag": "Integrate",
+      "title": "Hybrid & microgrids",
+      "desc": "Multiple sources combined into a resilient system that can operate with or independently of the grid."
+    }
+  ],
+  "journey": [
+    {
+      "n": "01",
+      "title": "Site suitability",
+      "desc": "We assess your site, demand and objectives to establish what is feasible."
+    },
+    {
+      "n": "02",
+      "title": "Design & agreements",
+      "desc": "System design plus support with the paperwork and agreements a project involves."
+    },
+    {
+      "n": "03",
+      "title": "Planning & permissions",
+      "desc": "Guidance on installation planning and any permissions that may apply."
+    },
+    {
+      "n": "04",
+      "title": "Utility connection",
+      "desc": "Coordinating grid connection and the associated technical requirements."
+    },
+    {
+      "n": "05",
+      "title": "Support & optimisation",
+      "desc": "Ongoing monitoring, maintenance and optimisation once the system is live."
+    }
+  ]
+}

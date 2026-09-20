@@ -1,0 +1,38 @@
+{
+  "areas": [
+    {
+      "title": "Engineering",
+      "desc": "Exposure to power and electrical engineering activity and design thinking."
+    },
+    {
+      "title": "Energy",
+      "desc": "How renewable, storage and smart-energy systems fit together."
+    },
+    {
+      "title": "Business",
+      "desc": "The commercial side of running an energy-engineering company."
+    },
+    {
+      "title": "Finance",
+      "desc": "Insight into how projects and operations are costed and managed."
+    },
+    {
+      "title": "Health & Safety",
+      "desc": "The safety culture and practices that underpin engineering work."
+    },
+    {
+      "title": "Technology",
+      "desc": "Digital tools, monitoring and the systems behind modern energy."
+    }
+  ],
+  "audience": [
+    "Students seeking work experience in engineering or energy",
+    "University and college candidates exploring the sector",
+    "Early-career applicants motivated to learn and contribute"
+  ],
+  "gains": [
+    "Practical insight into a working energy-engineering business",
+    "Exposure to multiple disciplines and how they connect",
+    "Mentoring and guidance from experienced people"
+  ]
+}

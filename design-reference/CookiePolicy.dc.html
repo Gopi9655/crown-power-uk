@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box;}body{margin:0;background:#fff;}a{text-decoration:none;color:inherit;}</style>
+</helmet>
+<div style="font-family:Inter,sans-serif;color:#0C1722;">
+<dc-import name="Header" variant="solid" hint-size="100%,76px"></dc-import>
+<dc-import name="LegalLayout" eyebrow="Legal" title="Cookie Policy" summary="How and why Crown Power uses cookies and similar technologies on this website." updated="Last reviewed 2025 · pending final confirmation of live cookies" review-note="{{ reviewNote }}" contact-heading="Cookie enquiries" contact-note="For questions about cookies or your choices on this site, contact us." contact-email="info@crownpoweruk.co.uk" sections="{{ sections }}" related="{{ related }}" hint-size="100%,1500px"></dc-import>
+<dc-import name="Footer" hint-size="100%,520px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      reviewNote: 'The cookie categories below describe how consent will work on the redesigned website. Only cookies that the final site actually uses should be enabled in production — the specific cookies, providers and durations must be confirmed before publication.',
+      sections: [
+        { id:'what', h:'1. What are cookies?', paras:['Cookies are small text files placed on your device when you visit a website. They are widely used to make websites work, to improve your experience and to provide information to site owners.','Similar technologies such as local storage may be used for the same purposes; where we refer to "cookies" we mean these technologies too.'] },
+        { id:'use', h:'2. How we use cookies', paras:['We use cookies to keep the site working correctly and, where you agree, to understand how the site is used so we can improve it. You are always in control of optional cookies.'] },
+        { id:'categories', h:'3. Cookie categories', paras:['We group cookies into the following categories. You can accept or reject the optional categories at any time.'], list:['Strictly necessary — required for the site to function; these cannot be switched off','Analytics — help us understand how visitors use the site so we can improve it','Functional — remember your choices and preferences','Marketing — used to measure and support relevant communications'] },
+        { id:'manage', h:'4. Managing your choices', paras:['You can change your preferences at any time using the "Cookie Settings" control in the site footer. You can also control cookies through your browser settings, although disabling strictly necessary cookies may affect how the site works.'] },
+        { id:'changes', h:'5. Changes to this policy', paras:['We may update this cookie policy from time to time. Any changes will be published on this page with an updated review date.'] },
+      ],
+      related: [
+        { label:'Privacy Policy', href:'PrivacyPolicy.dc.html' },
+        { label:'Terms & Conditions', href:'TermsConditions.dc.html' },
+        { label:'Accessibility', href:'Accessibility.dc.html' },
+        { label:'Contact', href:'Contact.dc.html' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

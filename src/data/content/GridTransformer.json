@@ -1,0 +1,28 @@
+{
+  "applications": [
+    {
+      "title": "Grid Infrastructure",
+      "desc": "Core distribution assets engineered for reliable operation."
+    },
+    {
+      "title": "Power Distribution",
+      "desc": "Stepping voltage across networks with minimal losses."
+    },
+    {
+      "title": "Substation Integration",
+      "desc": "Specified and installed as part of substation builds."
+    },
+    {
+      "title": "Network Upgrades",
+      "desc": "Reinforcing capacity for growing and changing demand."
+    },
+    {
+      "title": "Monitoring & Control",
+      "desc": "Visibility that supports smarter, more responsive grids."
+    },
+    {
+      "title": "Renewable Connection",
+      "desc": "Linking solar, wind and storage into the wider network."
+    }
+  ]
+}

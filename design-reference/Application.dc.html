@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#fff;}
+  a{text-decoration:none;color:inherit;}
+  input,select,textarea{font-family:inherit;}
+  @media (prefers-reduced-motion: no-preference){
+    [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+    [data-reveal][data-in="1"]{opacity:1;transform:none;}
+  }
+</style>
+</helmet>
+<div style="font-family:Inter,sans-serif;color:#0C1722;">
+<dc-import name="Header" variant="solid" hint-size="100%,76px"></dc-import>
+
+<main>
+  <!-- HERO -->
+  <section style="background:linear-gradient(115deg,#071B4D,#0D3178);padding:clamp(60px,9vw,110px) 0 clamp(50px,7vw,80px);">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,40px);">
+      <div style="display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:0.22em;color:#8FB8FF;text-transform:uppercase;margin-bottom:20px;"><span style="width:26px;height:1px;background:#D9A81A;"></span>Contact · Application</div>
+      <h1 style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(32px,4.6vw,54px);line-height:1.06;letter-spacing:-0.02em;color:#fff;margin:0 0 18px;max-width:820px;">Apply to Crown Power.</h1>
+      <p style="font-size:clamp(16px,1.7vw,20px);line-height:1.6;color:#C2CDD9;max-width:600px;margin:0;">One form for internships, training and general applications. Tell us who you are and what you're interested in.</p>
+    </div>
+  </section>
+
+  <section style="padding:clamp(48px,7vw,96px) 0;background:#F6F8FA;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,40px);display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:start;">
+
+      <!-- FORM -->
+      <div data-reveal style="background:#fff;border:1px solid #E4E9EF;border-radius:18px;padding:clamp(28px,4vw,48px);box-shadow:0 30px 60px -40px rgba(11,46,107,0.4);">
+        <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+          <div style="text-align:center;padding:30px 10px;">
+            <div style="width:64px;height:64px;border-radius:50%;background:#E8F6EC;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1E9E52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <h2 style="font-family:Manrope,sans-serif;font-weight:800;font-size:26px;margin:0 0 12px;color:#0C1722;">Application received</h2>
+            <p style="font-size:15.5px;line-height:1.7;color:#5A6875;max-width:420px;margin:0 auto 26px;">Thank you, {{ submittedName }}. We've logged your application and will be in touch about suitable opportunities.</p>
+            <button type="button" onClick="{{ reset }}" style="font-size:15px;font-weight:600;color:#176BFF;background:none;border:none;cursor:pointer;">Submit another application</button>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ onSubmit }}" novalidate="true">
+            <h2 style="font-family:Manrope,sans-serif;font-weight:800;font-size:22px;margin:0 0 6px;color:#0C1722;">Your application</h2>
+            <p style="font-size:14.5px;color:#5A6875;margin:0 0 26px;">Fields marked <span style="color:#9A6A00;">*</span> are required.</p>
+
+            <label style="display:block;margin-bottom:16px;">
+              <span style="display:block;font-size:13px;font-weight:600;color:#2B3946;margin-bottom:7px;">I'm applying for <span style="color:#9A6A00;">*</span></span>
+              <select value="{{ values.kind }}" onChange="{{ handlers.kind }}" style="{{ fieldStyles.kind }}">
+                <option value="">Select…</option>
+                <sc-for list="{{ kinds }}" as="k" hint-placeholder-count="4"><option value="{{ k }}">{{ k }}</option></sc-for>
+              </select>
+              <sc-if value="{{ errors.kind }}" hint-placeholder-val="{{ false }}"><span style="display:block;font-size:12.5px;color:#C0392B;margin-top:6px;">{{ errors.kind }}</span></sc-if>
+            </label>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <label style="display:block;">
+                <span style="display:block;font-size:13px;font-weight:600;color:#2B3946;margin-bottom:7px;">First name <span style="color:#9A6A00;">*</span></span>
+                <input type="text" value="{{ values.firstName }}" onInput="{{ handlers.firstName }}" placeholder="Jane" style="{{ fieldStyles.firstName }}">
+                <sc-if value="{{ errors.firstName }}" hint-placeholder-val="{{ false }}"><span style="display:block;font-size:12.5px;color:#C0392B;margin-top:6px;">{{ errors.firstName }}</span></sc-if>
+              </label>
+              <label style="display:block;">
+                <span style="display:block;font-size:13px;font-weight:600;color:#2B3946;margin-bottom:7px;">Last name <span style="color:#9A6A00;">*</span></span>
+                <input type="text" value="{{ values.lastName }}" onInput="{{ handlers.lastName }}" placeholder="Smith" style="{{ fieldStyles.lastName }}">
+                <sc-if value="{{ errors.lastName }}" hint-placeholder-val="{{ false }}"><span style="display:block;font-size:12.5px;color:#C0392B;margin-top:6px;">{{ errors.lastName }}</span></sc-if>
+              </label>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;">
+              <label style="display:block;">
+                <span style="display:block;font-size:13px;font-weight:600;color:#2B3946;margin-bottom:7px;">Email <span style="color:#9A6A00;">*</span></span>
+                <input type="email" value="{{ values.email }}" onInput="{{ handlers.email }}" placeholder="jane@email.com" style="{{ fieldStyles.email }}">
+                <sc-if value="{{ errors.email }}" hint-placeholder-val="{{ false }}"><span style="display:block;font-size:12.5px;color:#C0392B;margin-top:6px;">{{ errors.email }}</span></sc-if>
+              </label>
+              <label style="display:block;">
+                <span style="display:block;font-size:13px;font-weight:600;color:#2B3946;margin-bottom:7px;">Phone</span>
+                <input type="tel" value="{{ values.phone }}" onInput="{{ handlers.phone }}" placeholder="Optional" style="{{ fieldStyles.phone }}">
+              </label>
+            </div>
+
+            <label style="display:block;margin-top:16px;">
+              <span style="display:block;font-size:13px;font-weight:600;color:#2B3946;margin-bottom:7px;">Area of interest</span>
+              <select value="{{ values.area }}" onChange="{{ handlers.area }}" style="{{ fieldStyles.area }}">
+                <option value="">No preference</option>
+                <sc-for list="{{ areas }}" as="a" hint-placeholder-count="6"><option value="{{ a }}">{{ a }}</option></sc-for>
+              </select>
+            </label>
+
+            <label style="display:block;margin-top:16px;">
+              <span style="display:block;font-size:13px;font-weight:600;color:#2B3946;margin-bottom:7px;">Tell us about yourself <span style="color:#9A6A00;">*</span></span>
+              <textarea value="{{ values.message }}" onInput="{{ handlers.message }}" rows="5" placeholder="Your background, what you're studying or doing now, and what you hope to gain…" style="{{ fieldStyles.message }}"></textarea>
+              <sc-if value="{{ errors.message }}" hint-placeholder-val="{{ false }}"><span style="display:block;font-size:12.5px;color:#C0392B;margin-top:6px;">{{ errors.message }}</span></sc-if>
+            </label>
+
+            <label style="display:block;margin-top:16px;">
+              <span style="display:block;font-size:13px;font-weight:600;color:#2B3946;margin-bottom:7px;">CV / supporting document</span>
+              <input type="file" onChange="{{ handlers.file }}" style="display:block;width:100%;font-size:14px;color:#43525F;padding:12px;border:1px dashed #C7CFD8;border-radius:10px;background:#FBFCFE;cursor:pointer;">
+              <span style="display:block;font-size:12px;color:#8A98A6;margin-top:6px;">{{ fileNote }}</span>
+            </label>
+
+            <label style="display:flex;align-items:flex-start;gap:11px;margin-top:20px;cursor:pointer;">
+              <input type="checkbox" checked="{{ values.consent }}" onChange="{{ handlers.consent }}" style="width:18px;height:18px;margin-top:2px;flex:none;accent-color:#176BFF;">
+              <span style="font-size:13px;line-height:1.55;color:#5A6875;">I consent to Crown Power Energy Systems Ltd storing and processing my details to assess my application, in line with the <a href="PrivacyPolicy.dc.html" style="color:#176BFF;font-weight:600;">Privacy Policy</a>. <span style="color:#9A6A00;">*</span></span>
+            </label>
+            <sc-if value="{{ errors.consent }}" hint-placeholder-val="{{ false }}"><span style="display:block;font-size:12.5px;color:#C0392B;margin-top:6px;">{{ errors.consent }}</span></sc-if>
+
+            <button type="submit" disabled="{{ loading }}" style="{{ submitStyle }}">{{ submitLabel }}</button>
+          </form>
+        </sc-if>
+      </div>
+
+      <!-- ASIDE -->
+      <aside data-reveal style="display:flex;flex-direction:column;gap:18px;">
+        <div style="background:#071B4D;color:#fff;border-radius:16px;padding:32px 30px;">
+          <h3 style="font-family:Manrope,sans-serif;font-weight:700;font-size:19px;margin:0 0 14px;">Before you apply</h3>
+          <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px;">
+            <li style="display:flex;gap:10px;font-size:14.5px;line-height:1.55;color:#C2CDD9;"><span style="color:#D9A81A;flex:none;">→</span>Read about our <a href="Internships.dc.html" style="color:#F2C63D;font-weight:600;">internship programme</a></li>
+            <li style="display:flex;gap:10px;font-size:14.5px;line-height:1.55;color:#C2CDD9;"><span style="color:#D9A81A;flex:none;">→</span>Explore <a href="Training.dc.html" style="color:#F2C63D;font-weight:600;">training &amp; development</a></li>
+            <li style="display:flex;gap:10px;font-size:14.5px;line-height:1.55;color:#C2CDD9;"><span style="color:#D9A81A;flex:none;">→</span>Learn <a href="About.dc.html" style="color:#F2C63D;font-weight:600;">about Crown Power</a></li>
+          </ul>
+        </div>
+        <div style="border:1px solid #E4E9EF;border-radius:16px;padding:28px 26px;background:#fff;">
+          <h3 style="font-family:Manrope,sans-serif;font-weight:700;font-size:17px;margin:0 0 10px;color:#0C1722;">Questions?</h3>
+          <p style="font-size:14px;line-height:1.65;color:#5A6875;margin:0 0 14px;">Prefer to ask before applying? Reach our team directly.</p>
+          <a href="mailto:info@crownpoweruk.co.uk" style="font-size:14.5px;font-weight:600;color:#176BFF;">info@crownpoweruk.co.uk</a>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+</main>
+
+<dc-import name="Footer" hint-size="100%,520px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { values: { kind:'', firstName:'', lastName:'', email:'', phone:'', area:'', message:'', consent:false }, fileName:'', errors:{}, loading:false, submitted:false, submittedName:'' };
+
+  componentDidMount() {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    if (reduce || !('IntersectionObserver' in window)) { els.forEach(e => e.setAttribute('data-in','1')); return; }
+    const io = new IntersectionObserver((ents)=>{ents.forEach(en=>{if(en.isIntersecting){en.target.setAttribute('data-in','1');io.unobserve(en.target);}});},{threshold:0.08});
+    els.forEach(e => io.observe(e)); this._io = io;
+  }
+  componentWillUnmount(){ if(this._io) this._io.disconnect(); }
+
+  set(k, v){ this.setState(s => ({ values: { ...s.values, [k]: v }, errors: { ...s.errors, [k]: undefined } })); }
+  validate(){
+    const v = this.state.values; const e = {};
+    if(!v.kind) e.kind = 'Please choose what you are applying for.';
+    if(!v.firstName.trim()) e.firstName = 'Please enter your first name.';
+    if(!v.lastName.trim()) e.lastName = 'Please enter your last name.';
+    if(!v.email.trim()) e.email = 'Please enter your email.';
+    else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email)) e.email = 'Enter a valid email address.';
+    if(!v.message.trim() || v.message.trim().length < 10) e.message = 'Tell us a little about yourself (10+ characters).';
+    if(!v.consent) e.consent = 'Please provide your consent to continue.';
+    return e;
+  }
+  renderVals(){
+    const v = this.state.values, errs = this.state.errors;
+    const field = (name) => {
+      const err = errs[name];
+      return { width:'100%', padding:'12px 14px', fontSize:'15px', color:'#0C1722', background:'#fff',
+        border:'1px solid ' + (err ? '#C0392B' : '#D3DBE3'), borderRadius:'10px', outline:'none', transition:'border-color .15s' };
+    };
+    const mk = (k) => (ev) => this.set(k, ev.target.value);
+    const submit = (ev) => {
+      ev.preventDefault();
+      const e = this.validate();
+      if(Object.keys(e).length){ this.setState({ errors:e }); return; }
+      this.setState({ loading:true });
+      setTimeout(()=> this.setState({ loading:false, submitted:true, submittedName: v.firstName }), 1100);
+    };
+    return {
+      values: v, errors: errs, loading: this.state.loading,
+      submitted: this.state.submitted, notSubmitted: !this.state.submitted, submittedName: this.state.submittedName,
+      kinds: ['Internship / work experience','Training programme','Graduate / early career','General application'],
+      areas: ['Engineering','Energy','Business','Finance','Health & Safety','Technology'],
+      fileNote: this.state.fileName ? ('Attached: ' + this.state.fileName) : 'PDF or Word document (optional). Front-end demo — not uploaded.',
+      fieldStyles: { kind:field('kind'), firstName:field('firstName'), lastName:field('lastName'), email:field('email'), phone:field('phone'), area:field('area'), message:{...field('message'), resize:'vertical', minHeight:'120px', lineHeight:'1.6'} },
+      handlers: {
+        kind: mk('kind'), firstName: mk('firstName'), lastName: mk('lastName'), email: mk('email'),
+        phone: mk('phone'), area: mk('area'), message: mk('message'),
+        consent: (ev)=> this.set('consent', ev.target.checked),
+        file: (ev)=> this.setState({ fileName: ev.target.files && ev.target.files[0] ? ev.target.files[0].name : '' }),
+      },
+      onSubmit: submit,
+      reset: ()=> this.setState({ values:{ kind:'', firstName:'', lastName:'', email:'', phone:'', area:'', message:'', consent:false }, fileName:'', errors:{}, submitted:false }),
+      submitLabel: this.state.loading ? 'Submitting…' : 'Submit application',
+      submitStyle: { marginTop:'24px', width:'100%', fontSize:'16px', fontWeight:700, color:'#071B4D', padding:'15px', borderRadius:'10px', border:'none',
+        background: this.state.loading ? '#E7C766' : 'linear-gradient(180deg,#F4CB3E,#D9A81A)', cursor: this.state.loading ? 'default':'pointer',
+        boxShadow:'0 10px 26px -10px rgba(217,168,26,0.6)', transition:'filter .2s' },
+    };
+  }
+}
+</script>
+</body>
+</html>
