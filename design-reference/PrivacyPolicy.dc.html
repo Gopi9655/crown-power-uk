@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box;}body{margin:0;background:#fff;}a{text-decoration:none;color:inherit;}</style>
+</helmet>
+<div style="font-family:Inter,sans-serif;color:#0C1722;">
+<dc-import name="Header" variant="solid" hint-size="100%,76px"></dc-import>
+<dc-import name="LegalLayout" eyebrow="Legal" title="Privacy Policy" summary="How Crown Power Energy Systems Ltd collects, uses and protects personal data." updated="Last reviewed 2025 · pending final legal confirmation" review-note="{{ reviewNote }}" contact-heading="Data protection enquiries" contact-note="For any question about how we handle your personal data, or to exercise your rights, contact us." contact-email="info@crownpoweruk.co.uk" sections="{{ sections }}" related="{{ related }}" hint-size="100%,1600px"></dc-import>
+<dc-import name="Footer" hint-size="100%,520px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      reviewNote: 'This policy is a structured draft for the redesigned website. The specific data collected, processors used, analytics, cookies and retention periods must be confirmed by Crown Power and its legal advisers before publication.',
+      sections: [
+        { id:'intro', h:'1. Who we are', paras:['Crown Power Energy Systems Ltd ("Crown Power", "we", "us") is the data controller for personal data collected through this website. We are a company registered in England and Wales (Company No. 16070400).','This policy explains what personal data we collect, why we collect it, how we use it and the rights available to you.'] },
+        { id:'collect', h:'2. Information we collect', paras:['We collect information you provide directly to us — for example when you complete an enquiry, application or contact form.'], list:['Contact details such as your name, email address and telephone number','Information about your enquiry, project or application','Any documents you choose to share with us','Basic technical data collected automatically when you use the site'] },
+        { id:'use', h:'3. How we use your information', paras:['We use personal data to respond to your enquiry, assess applications, provide our services and communicate with you.'], list:['Responding to enquiries and providing information you request','Assessing internship, training and job applications','Managing our relationship with clients, partners and contractors','Meeting our legal and regulatory obligations'] },
+        { id:'basis', h:'4. Lawful basis for processing', paras:['We rely on one or more lawful bases under applicable data-protection law, including your consent, the performance of a contract, our legitimate interests in operating our business, and compliance with legal obligations.'] },
+        { id:'sharing', h:'5. Sharing your information', paras:['We do not sell your personal data. We may share it with trusted service providers who help us operate our business, and where required by law. Any such sharing is subject to appropriate safeguards.'] },
+        { id:'retention', h:'6. How long we keep it', paras:['We retain personal data only for as long as necessary for the purposes described in this policy, or as required by law, after which it is securely deleted.'] },
+        { id:'rights', h:'7. Your rights', paras:['Subject to applicable law, you have rights over your personal data.'], list:['Access to the personal data we hold about you','Correction of inaccurate data','Erasure of your data in certain circumstances','Objection to, or restriction of, certain processing','Withdrawal of consent where processing is based on consent'] },
+        { id:'contact', h:'8. Contact & complaints', paras:['To exercise your rights or ask a question, please contact us using the details below. If you are in the UK and are not satisfied with our response, you have the right to complain to the Information Commissioner\u2019s Office (ICO).'] },
+      ],
+      related: [
+        { label:'Cookie Policy', href:'CookiePolicy.dc.html' },
+        { label:'Terms & Conditions', href:'TermsConditions.dc.html' },
+        { label:'Accessibility', href:'Accessibility.dc.html' },
+        { label:'Contact', href:'Contact.dc.html' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

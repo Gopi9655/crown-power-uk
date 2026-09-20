@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#fff;}
+  a{text-decoration:none;color:inherit;}
+  @media (prefers-reduced-motion: no-preference){
+    [data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+    [data-reveal][data-in="1"]{opacity:1;transform:none;}
+  }
+</style>
+</helmet>
+<div style="font-family:Inter,sans-serif;color:#0C1722;">
+<dc-import name="Header" variant="overlay" hint-size="100%,76px"></dc-import>
+
+<main>
+  <!-- HERO -->
+  <section style="position:relative;margin-top:-76px;padding:calc(76px + clamp(70px,10vw,130px)) 0 clamp(64px,9vw,110px);overflow:hidden;background:linear-gradient(110deg,rgba(7,27,77,0.92),rgba(11,46,107,0.72)),url('https://static.wixstatic.com/media/11062b_a47665bc61d24370a77110835c6bbcc1~mv2.jpg/v1/fill/w_1920,h_1080,al_c,q_90,enc_avif,quality_auto/x.jpg');background-size:cover;background-position:center;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,40px);">
+      <div style="display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:0.22em;color:#8FB8FF;text-transform:uppercase;margin-bottom:22px;"><span style="width:26px;height:1px;background:#D9A81A;"></span>Insights · Why Green Energy</div>
+      <h1 style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(34px,5.4vw,62px);line-height:1.05;letter-spacing:-0.02em;color:#fff;margin:0 0 22px;max-width:900px;text-wrap:balance;">Why green energy is a sound business decision.</h1>
+      <p style="font-size:clamp(17px,1.8vw,21px);line-height:1.6;color:#C2CDD9;max-width:660px;margin:0;">Renewable and smart-energy systems can reduce emissions, improve resilience and lower long-term energy costs — when they are engineered around your site, tariffs and objectives.</p>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section style="padding:clamp(56px,8vw,100px) 0;background:#fff;">
+    <div style="max-width:820px;margin:0 auto;padding:0 clamp(20px,5vw,40px);">
+      <p data-reveal style="font-family:Manrope,sans-serif;font-weight:600;font-size:clamp(20px,2.5vw,27px);line-height:1.45;color:#0C1722;margin:0 0 20px;text-wrap:pretty;">The move to clean power is reshaping how organisations buy, generate and manage energy.</p>
+      <p data-reveal style="font-size:17px;line-height:1.75;color:#43525F;margin:0;">The right combination of generation, storage and intelligent control can turn energy from a fixed overhead into a managed, optimised asset. The benefits below depend on your site, load profile, tariffs and applicable regulation — so we assess each case individually rather than promising universal outcomes.</p>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section style="padding:clamp(8px,2vw,20px) 0 clamp(56px,8vw,100px);background:#fff;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,40px);">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px;">
+        <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="4">
+          <div data-reveal style="border:1px solid #E4E9EF;border-radius:16px;padding:34px 30px;background:#FBFCFE;">
+            <div style="width:46px;height:46px;border-radius:11px;background:#EEF4FF;display:flex;align-items:center;justify-content:center;margin-bottom:20px;"><span data-icon>{{ b.icon }}</span></div>
+            <h3 style="font-family:Manrope,sans-serif;font-weight:700;font-size:20px;line-height:1.25;margin:0 0 12px;color:#0C1722;">{{ b.title }}</h3>
+            <p style="font-size:15px;line-height:1.65;color:#5A6875;margin:0;">{{ b.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNOLOGIES -->
+  <section style="padding:clamp(64px,9vw,120px) 0;background:#071B4D;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,40px);">
+      <div data-reveal style="max-width:640px;margin-bottom:44px;">
+        <div style="font-size:12px;font-weight:600;letter-spacing:0.22em;color:#8FB8FF;text-transform:uppercase;margin-bottom:18px;">The Building Blocks</div>
+        <h2 style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(26px,3.6vw,42px);line-height:1.12;letter-spacing:-0.015em;margin:0;color:#fff;">Technologies that work best together.</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:2px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;">
+        <sc-for list="{{ tech }}" as="t" hint-placeholder-count="4">
+          <div style="background:#071B4D;padding:34px 30px;">
+            <div style="font-family:Manrope,sans-serif;font-weight:800;font-size:13px;letter-spacing:0.14em;color:#D9A81A;text-transform:uppercase;margin-bottom:14px;">{{ t.tag }}</div>
+            <h3 style="font-family:Manrope,sans-serif;font-weight:700;font-size:19px;margin:0 0 10px;color:#fff;">{{ t.title }}</h3>
+            <p style="font-size:14.5px;line-height:1.65;color:#B9C6D3;margin:0;">{{ t.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE JOURNEY -->
+  <section style="padding:clamp(64px,9vw,120px) 0;background:#F6F8FA;border-top:1px solid #E6EBF0;border-bottom:1px solid #E6EBF0;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,40px);">
+      <div data-reveal style="max-width:640px;margin-bottom:44px;">
+        <div style="font-size:12px;font-weight:600;letter-spacing:0.22em;color:#176BFF;text-transform:uppercase;margin-bottom:18px;">From Enquiry to Energised</div>
+        <h2 style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(26px,3.4vw,40px);line-height:1.12;letter-spacing:-0.015em;margin:0 0 14px;color:#0C1722;">We support the whole journey.</h2>
+        <p style="font-size:16px;line-height:1.7;color:#5A6875;margin:0;">Adopting renewable energy involves more than hardware. We help manage the planning, paperwork and connections around a project.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:18px;">
+        <sc-for list="{{ journey }}" as="j" hint-placeholder-count="5">
+          <div data-reveal style="background:#fff;border:1px solid #E4E9EF;border-radius:14px;padding:26px 24px;position:relative;">
+            <div style="font-family:Manrope,sans-serif;font-weight:800;font-size:14px;color:#9A6A00;margin-bottom:12px;">{{ j.n }}</div>
+            <h3 style="font-family:Manrope,sans-serif;font-weight:700;font-size:17px;line-height:1.3;margin:0 0 8px;color:#0C1722;">{{ j.title }}</h3>
+            <p style="font-size:14px;line-height:1.6;color:#5A6875;margin:0;">{{ j.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE CONTEXT -->
+  <section style="padding:clamp(56px,8vw,96px) 0;background:#fff;">
+    <div style="max-width:960px;margin:0 auto;padding:0 clamp(20px,5vw,40px);">
+      <div data-reveal style="border:1px solid #E4E9EF;border-left:4px solid #D9A81A;border-radius:12px;padding:32px clamp(24px,4vw,40px);background:#FBFCFE;">
+        <div style="font-family:Manrope,sans-serif;font-weight:700;font-size:12px;letter-spacing:0.14em;color:#9A6A00;text-transform:uppercase;margin-bottom:12px;">The Wider Picture</div>
+        <p style="font-family:Manrope,sans-serif;font-weight:600;font-size:clamp(18px,2.2vw,24px);line-height:1.45;margin:0 0 10px;color:#0C1722;">Britain's electricity is getting cleaner — and more dynamic.</p>
+        <p style="font-size:15.5px;line-height:1.7;color:#5A6875;margin:0;">Explore live grid data — the GB electricity mix, renewable output and regional demand — on our <a href="Services.dc.html#live" style="color:#176BFF;font-weight:600;">Services</a> page. Understanding these patterns is the first step to using energy more intelligently.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding:clamp(64px,9vw,110px) 0;background:linear-gradient(120deg,#071B4D,#0D3178);">
+    <div style="max-width:820px;margin:0 auto;padding:0 clamp(20px,5vw,40px);text-align:center;">
+      <div data-reveal>
+        <h2 style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(28px,4vw,46px);line-height:1.1;letter-spacing:-0.02em;color:#fff;margin:0 0 20px;">Is green energy right for your site?</h2>
+        <p style="font-size:17px;line-height:1.65;color:#B9C6D3;max-width:520px;margin:0 auto 34px;">Our engineers can assess your requirements and outline the options — with no obligation.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;">
+          <a href="Contact.dc.html#enquiry" style="font-size:16px;font-weight:700;color:#071B4D;padding:15px 28px;border-radius:9px;background:linear-gradient(180deg,#F4CB3E,#D9A81A);box-shadow:0 10px 30px -8px rgba(217,168,26,0.5);transition:transform .2s,filter .2s;" style-hover="transform:translateY(-2px);filter:brightness(1.05);">Request an Assessment →</a>
+          <a href="Services.dc.html" style="font-size:16px;font-weight:600;color:#EAF0F6;padding:15px 28px;border-radius:9px;border:1px solid rgba(255,255,255,0.3);transition:background .2s;" style-hover="background:rgba(255,255,255,0.08);">Explore Our Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<dc-import name="Footer" hint-size="100%,520px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    if (reduce || !('IntersectionObserver' in window)) { els.forEach(e => e.setAttribute('data-in','1')); return; }
+    const io = new IntersectionObserver((ents) => {
+      ents.forEach(en => { if (en.isIntersecting) { en.target.setAttribute('data-in','1'); io.unobserve(en.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+    els.forEach(e => io.observe(e));
+    this._io = io;
+    this._safety = setTimeout(() => els.forEach(e => e.setAttribute('data-in','1')), 2800);
+  }
+  componentWillUnmount() { if (this._io) this._io.disconnect(); if (this._safety) clearTimeout(this._safety); }
+  icon(paths) {
+    return React.createElement('svg', { width: 24, height: 24, viewBox: '0 0 24 24', fill: 'none', stroke: '#176BFF', strokeWidth: 1.8, strokeLinecap: 'round', strokeLinejoin: 'round' },
+      paths.map((d, i) => React.createElement('path', { key: i, d })));
+  }
+  renderVals() {
+    return {
+      benefits: [
+        { icon: this.icon(['M12 3v2','M12 19v2','M3 12h2','M19 12h2','M12 8a4 4 0 100 8 4 4 0 000-8z']), title: 'Environmental sustainability', desc: 'Renewable generation and storage can reduce reliance on fossil fuels and lower carbon emissions associated with your operations.' },
+        { icon: this.icon(['M12 1v22','M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6']), title: 'Financial efficiency', desc: 'Depending on tariffs, usage and site conditions, on-site generation and storage may reduce exposure to volatile energy prices over time.' },
+        { icon: this.icon(['M3 12l2-2 4 4 8-8 4 4','M3 20h18']), title: 'Energy independence', desc: 'Combining generation, storage and smart control can improve resilience and reduce dependence on imported grid power at peak times.' },
+        { icon: this.icon(['M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z']), title: 'Planning & conservation', desc: 'Efficiency measures and intelligent energy management help conserve resources and make the most of every kilowatt-hour.' },
+      ],
+      tech: [
+        { tag: 'Generate', title: 'Solar & wind', desc: 'On-site solar PV and wind generation, sized and sited to match your demand profile.' },
+        { tag: 'Store', title: 'Battery storage', desc: 'BESS captures surplus energy and releases it when it is most valuable or when supply is constrained.' },
+        { tag: 'Control', title: 'Smart energy management', desc: 'Monitoring, automation and SCADA coordinate generation, storage and loads in real time.' },
+        { tag: 'Integrate', title: 'Hybrid & microgrids', desc: 'Multiple sources combined into a resilient system that can operate with or independently of the grid.' },
+      ],
+      journey: [
+        { n: '01', title: 'Site suitability', desc: 'We assess your site, demand and objectives to establish what is feasible.' },
+        { n: '02', title: 'Design & agreements', desc: 'System design plus support with the paperwork and agreements a project involves.' },
+        { n: '03', title: 'Planning & permissions', desc: 'Guidance on installation planning and any permissions that may apply.' },
+        { n: '04', title: 'Utility connection', desc: 'Coordinating grid connection and the associated technical requirements.' },
+        { n: '05', title: 'Support & optimisation', desc: 'Ongoing monitoring, maintenance and optimisation once the system is live.' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

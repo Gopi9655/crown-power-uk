@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#fff;}
+  a{text-decoration:none;color:inherit;}
+  @media (prefers-reduced-motion: no-preference){
+    [data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+    [data-reveal][data-in="1"]{opacity:1;transform:none;}
+  }
+</style>
+</helmet>
+<div style="font-family:Inter,sans-serif;color:#0C1722;">
+<dc-import name="Header" variant="overlay" hint-size="100%,76px"></dc-import>
+
+<main>
+  <!-- HERO -->
+  <section style="position:relative;margin-top:-76px;padding:calc(76px + clamp(70px,10vw,130px)) 0 clamp(64px,9vw,110px);overflow:hidden;background:linear-gradient(110deg,rgba(7,27,77,0.95),rgba(11,46,107,0.78));">
+    <div style="position:absolute;inset:0;opacity:0.16;background-image:radial-gradient(circle at 1px 1px,#8FB8FF 1px,transparent 0);background-size:26px 26px;"></div>
+    <div style="position:relative;max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,40px);">
+      <div style="display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:0.22em;color:#8FB8FF;text-transform:uppercase;margin-bottom:22px;"><span style="width:26px;height:1px;background:#D9A81A;"></span>Products · Battery Products</div>
+      <h1 style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(34px,5.4vw,62px);line-height:1.05;letter-spacing:-0.02em;color:#fff;margin:0 0 22px;max-width:900px;text-wrap:balance;">The right battery for every application.</h1>
+      <p style="font-size:clamp(17px,1.8vw,21px);line-height:1.6;color:#C2CDD9;max-width:660px;margin:0;">From everyday cells to rechargeable technologies, we help you choose the correct battery type, size and chemistry for the job — and dispose of them responsibly.</p>
+    </div>
+  </section>
+
+  <!-- CHEMISTRIES -->
+  <section style="padding:clamp(56px,8vw,100px) 0;background:#fff;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,40px);">
+      <div data-reveal style="max-width:640px;margin-bottom:44px;">
+        <div style="font-size:12px;font-weight:600;letter-spacing:0.22em;color:#176BFF;text-transform:uppercase;margin-bottom:18px;">Battery Chemistries</div>
+        <h2 style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(26px,3.4vw,40px);line-height:1.12;letter-spacing:-0.015em;margin:0 0 14px;color:#0C1722;">Understanding the main types.</h2>
+        <p style="font-size:16px;line-height:1.7;color:#5A6875;margin:0;">Each chemistry suits different uses. The right choice depends on the device, how often it is used and whether it is rechargeable.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px;">
+        <sc-for list="{{ chemistries }}" as="c" hint-placeholder-count="3">
+          <div data-reveal style="border:1px solid #E4E9EF;border-radius:16px;padding:32px 28px;background:#FBFCFE;display:flex;flex-direction:column;">
+            <div style="font-family:Manrope,sans-serif;font-weight:800;font-size:13px;letter-spacing:0.12em;color:#9A6A00;text-transform:uppercase;margin-bottom:12px;">{{ c.type }}</div>
+            <h3 style="font-family:Manrope,sans-serif;font-weight:700;font-size:21px;margin:0 0 12px;color:#0C1722;">{{ c.title }}</h3>
+            <p style="font-size:15px;line-height:1.65;color:#5A6875;margin:0 0 18px;flex:1;">{{ c.desc }}</p>
+            <div style="border-top:1px solid #E4E9EF;padding-top:16px;">
+              <div style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#8A98A6;margin-bottom:6px;">Typically used for</div>
+              <div style="font-size:14px;font-weight:600;color:#2B3946;">{{ c.uses }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIZES -->
+  <section style="padding:clamp(56px,8vw,100px) 0;background:#F6F8FA;border-top:1px solid #E6EBF0;border-bottom:1px solid #E6EBF0;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,40px);">
+      <div data-reveal style="max-width:640px;margin-bottom:40px;">
+        <div style="font-size:12px;font-weight:600;letter-spacing:0.22em;color:#176BFF;text-transform:uppercase;margin-bottom:18px;">Common Sizes</div>
+        <h2 style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(26px,3.4vw,40px);line-height:1.12;letter-spacing:-0.015em;margin:0;color:#0C1722;">Standard cell sizes, explained.</h2>
+      </div>
+      <div data-reveal style="background:#fff;border:1px solid #E4E9EF;border-radius:16px;overflow:hidden;">
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:0;background:#0B2E6B;color:#fff;font-family:Manrope,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.06em;">
+          <div style="padding:16px 22px;">Size</div>
+          <div style="padding:16px 22px;">Typical applications</div>
+        </div>
+        <sc-for list="{{ sizes }}" as="s" hint-placeholder-count="5">
+          <div style="display:grid;grid-template-columns:90px 1fr;gap:0;border-top:1px solid #EDF1F5;">
+            <div style="padding:18px 22px;font-family:Manrope,sans-serif;font-weight:800;font-size:18px;color:#0B2E6B;">{{ s.size }}</div>
+            <div style="padding:18px 22px;font-size:14.5px;line-height:1.55;color:#43525F;">{{ s.use }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- STANDARD VS RECHARGEABLE -->
+  <section style="padding:clamp(64px,9vw,110px) 0;background:#fff;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px;">
+      <div data-reveal style="border:1px solid #E4E9EF;border-radius:16px;padding:38px 34px;background:#FBFCFE;">
+        <h3 style="font-family:Manrope,sans-serif;font-weight:800;font-size:22px;margin:0 0 14px;color:#0C1722;">Standard &amp; disposable</h3>
+        <p style="font-size:15.5px;line-height:1.7;color:#5A6875;margin:0 0 16px;">Single-use cells such as alkaline batteries are convenient and hold charge well in storage, making them well suited to low-drain and infrequently used devices.</p>
+        <p style="font-size:15.5px;line-height:1.7;color:#5A6875;margin:0;">They are cost-effective up front, but should always be recycled rather than sent to general waste.</p>
+      </div>
+      <div data-reveal style="border:1px solid #E4E9EF;border-radius:16px;padding:38px 34px;background:#071B4D;">
+        <h3 style="font-family:Manrope,sans-serif;font-weight:800;font-size:22px;margin:0 0 14px;color:#fff;">Rechargeable</h3>
+        <p style="font-size:15.5px;line-height:1.7;color:#B9C6D3;margin:0 0 16px;">Rechargeable chemistries such as NiMH and lithium-ion can be reused many times, which may reduce cost and waste for frequently used, higher-drain devices.</p>
+        <p style="font-size:15.5px;line-height:1.7;color:#B9C6D3;margin:0;">They require a suitable charger and correct handling, and must be recycled at end of life.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISPOSAL & RECYCLING -->
+  <section style="padding:clamp(56px,8vw,100px) 0;background:#F6F8FA;border-top:1px solid #E6EBF0;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,40px);">
+      <div data-reveal style="max-width:640px;margin-bottom:40px;">
+        <div style="font-size:12px;font-weight:600;letter-spacing:0.22em;color:#176BFF;text-transform:uppercase;margin-bottom:18px;">Disposal &amp; Recycling</div>
+        <h2 style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(26px,3.4vw,40px);line-height:1.12;letter-spacing:-0.015em;margin:0 0 14px;color:#0C1722;">Dispose of batteries responsibly.</h2>
+        <p style="font-size:16px;line-height:1.7;color:#5A6875;margin:0;">Batteries contain materials that should be kept out of general waste. Recycling recovers valuable materials and prevents environmental harm.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px;">
+        <sc-for list="{{ recycle }}" as="r" hint-placeholder-count="3">
+          <div data-reveal style="background:#fff;border:1px solid #E4E9EF;border-radius:14px;padding:28px 26px;">
+            <h3 style="font-family:Manrope,sans-serif;font-weight:700;font-size:17px;margin:0 0 10px;color:#0C1722;">{{ r.title }}</h3>
+            <p style="font-size:14.5px;line-height:1.65;color:#5A6875;margin:0;">{{ r.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT DATA (verification) -->
+  <section style="padding:clamp(56px,8vw,96px) 0;background:#fff;">
+    <div style="max-width:960px;margin:0 auto;padding:0 clamp(20px,5vw,40px);">
+      <div data-reveal style="border:1px dashed #C7CFD8;border-radius:14px;padding:32px clamp(24px,4vw,40px);background:#FBFCFE;">
+        <div style="display:inline-flex;align-items:center;gap:8px;font-family:Manrope,sans-serif;font-weight:700;font-size:11.5px;letter-spacing:0.12em;color:#9A6A00;text-transform:uppercase;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:50%;background:#D9A81A;"></span>Product catalogue — company data required</div>
+        <p style="font-size:15.5px;line-height:1.7;color:#43525F;margin:0;">Specific product ranges, capacities, brands, pack sizes, pricing and availability will be published here once confirmed by Crown Power. We do not list capacities or specifications that have not been verified.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding:clamp(64px,9vw,110px) 0;background:linear-gradient(120deg,#071B4D,#0D3178);">
+    <div style="max-width:820px;margin:0 auto;padding:0 clamp(20px,5vw,40px);text-align:center;">
+      <div data-reveal>
+        <h2 style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(28px,4vw,46px);line-height:1.1;letter-spacing:-0.02em;color:#fff;margin:0 0 20px;">Need help choosing?</h2>
+        <p style="font-size:17px;line-height:1.65;color:#B9C6D3;max-width:520px;margin:0 auto 34px;">Tell us about your devices and usage, and we'll advise on the right batteries — or a storage system for larger needs.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;">
+          <a href="Contact.dc.html#enquiry" style="font-size:16px;font-weight:700;color:#071B4D;padding:15px 28px;border-radius:9px;background:linear-gradient(180deg,#F4CB3E,#D9A81A);box-shadow:0 10px 30px -8px rgba(217,168,26,0.5);transition:transform .2s,filter .2s;" style-hover="transform:translateY(-2px);filter:brightness(1.05);">Ask an Engineer →</a>
+          <a href="BESS.dc.html" style="font-size:16px;font-weight:600;color:#EAF0F6;padding:15px 28px;border-radius:9px;border:1px solid rgba(255,255,255,0.3);transition:background .2s;" style-hover="background:rgba(255,255,255,0.08);">Explore Battery Storage</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<dc-import name="Footer" hint-size="100%,520px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    if (reduce || !('IntersectionObserver' in window)) { els.forEach(e => e.setAttribute('data-in','1')); return; }
+    const io = new IntersectionObserver((ents) => {
+      ents.forEach(en => { if (en.isIntersecting) { en.target.setAttribute('data-in','1'); io.unobserve(en.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+    els.forEach(e => io.observe(e));
+    this._io = io;
+    this._safety = setTimeout(() => els.forEach(e => e.setAttribute('data-in','1')), 2800);
+  }
+  componentWillUnmount() { if (this._io) this._io.disconnect(); if (this._safety) clearTimeout(this._safety); }
+  renderVals() {
+    return {
+      chemistries: [
+        { type: 'Alkaline', title: 'Everyday power', desc: 'The common single-use cell. Reliable, widely available and good at holding charge in storage.', uses: 'Remotes, clocks, torches, toys' },
+        { type: 'NiMH', title: 'Rechargeable workhorse', desc: 'Nickel-metal hydride cells can be recharged hundreds of times and suit regularly used devices.', uses: 'Cameras, controllers, household devices' },
+        { type: 'Lithium-ion', title: 'High energy density', desc: 'Lightweight, high-capacity and rechargeable — the technology behind most modern electronics and larger storage systems.', uses: 'Laptops, phones, power tools, BESS' },
+      ],
+      sizes: [
+        { size: 'AA', use: 'The most common size — torches, remotes, toys, wireless peripherals and countless everyday devices.' },
+        { size: 'AAA', use: 'Smaller devices where space is limited — slim remotes, small torches and electronic accessories.' },
+        { size: 'C', use: 'Medium-drain devices needing more capacity, such as larger torches and portable radios.' },
+        { size: 'D', use: 'High-drain, longer-running devices such as large flashlights and some industrial equipment.' },
+        { size: '9V', use: 'Smoke alarms, detectors and specialist electronic equipment requiring a higher voltage.' },
+      ],
+      recycle: [
+        { title: 'Keep out of general waste', desc: 'Batteries should never go in your normal bin — many retailers and recycling points accept them free of charge.' },
+        { title: 'Store safely before recycling', desc: 'Keep used batteries dry and, for lithium cells, tape the terminals to prevent short circuits before disposal.' },
+        { title: 'Recover valuable materials', desc: 'Recycling recovers metals and reduces the environmental impact of battery production and disposal.' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
